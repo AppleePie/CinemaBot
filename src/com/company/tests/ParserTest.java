@@ -1,5 +1,7 @@
-package com.company;
+package com.company.tests;
 
+import com.company.Data;
+import com.company.Parser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Test;
