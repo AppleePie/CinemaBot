@@ -16,6 +16,7 @@ public class DataHelper {
     public void initDB(String collectionName) throws IOException {
         var flag = true;
         var database = client.getDatabase("myDB");
+        //TODO
             database.getCollection(collectionName);
             database.getCollection(collectionName).drop();
         filmCollection = database.getCollection(collectionName);
@@ -36,7 +37,7 @@ public class DataHelper {
         filmCollection.insertOne(film.toDocument());
     }
 
-    public List<Document> getAllData() throws IllegalAccessException {
+    public List<Document> getAllData() {
         var films = new ArrayList<Document>();
         var documents = filmCollection.find();
         for (var document: documents) {
