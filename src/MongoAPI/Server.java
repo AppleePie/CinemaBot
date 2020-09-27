@@ -12,13 +12,13 @@ public class Server {
     private static BufferedReader in;
     private static BufferedWriter out;
 
-    public static void main(String[] args) throws IOException, IllegalAccessException {
+    public static void main(String[] args) throws IOException {
         dataHelper = new DataHelper();
         dataHelper.initDB("films");
         getRequest(dataHelper.getAllData());
     }
 
-    public static void getRequest(List<Document> documents) throws IOException {
+    public static void getRequest(List<Document> documents) {
         try {
             try {
                 server = new ServerSocket(4004);
