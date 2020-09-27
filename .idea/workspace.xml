@@ -23,17 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mongo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/bson-3.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mongo-java-driver-3.12.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mongodb-driver-core-3.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MongoAPI/DataHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MongoAPI/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaBot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Data.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MongoAPI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/tests/ParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +62,16 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="JUnit.MongoAPI.tests in CinemaBot">
+  <component name="RunManager" selected="Application.MongoMain">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="CinemaBot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MongoMain" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="MongoAPI.Main" />
       <module name="CinemaBot" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,6 +102,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MongoMain" />
+      <item itemvalue="JUnit.MongoAPI.tests in CinemaBot" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.MongoAPI.tests in CinemaBot" />
@@ -121,7 +125,7 @@
       <workItem from="1601134149172" duration="567000" />
       <workItem from="1601134884887" duration="11583000" />
       <workItem from="1601154999461" duration="49000" />
-      <workItem from="1601199580697" duration="3275000" />
+      <workItem from="1601199580697" duration="3647000" />
     </task>
     <servers />
   </component>
@@ -152,10 +156,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" width="816" height="729" key="#Intentions/0.0.1920.1040@0.0.1920.1040" timestamp="1601145370951" />
-    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601142717504">
+    <state x="414" y="175" width="1119" height="772" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601203230382">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601142717504" />
+    <state x="414" y="175" width="1119" height="772" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601203230382" />
     <state x="588" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1601133486977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
