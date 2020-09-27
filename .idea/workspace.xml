@@ -23,7 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/DataHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/DataHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CinemaBot/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MongoAPI/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MongoAPI/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +133,7 @@
       <workItem from="1601134884887" duration="11583000" />
       <workItem from="1601154999461" duration="49000" />
       <workItem from="1601199580697" duration="4949000" />
-      <workItem from="1601236788177" duration="8438000" />
+      <workItem from="1601236788177" duration="9059000" />
     </task>
     <servers />
   </component>
@@ -149,10 +156,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="586" y="198" key="#Inspections" timestamp="1601201002145">
+    <state x="586" y="198" key="#Inspections" timestamp="1601245374262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1601201002145" />
+    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1601245374262" />
     <state x="552" y="178" width="816" height="729" key="#Intentions" timestamp="1601145370951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -177,46 +184,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601201881508" />
-    <state width="1225" height="466" key="DebuggerActiveHint" timestamp="1601244419820">
+    <state width="1225" height="466" key="DebuggerActiveHint" timestamp="1601245599002">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1225" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1601244419820" />
+    <state width="1225" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1601245599002" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1601133285285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601133285285" />
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601244981509">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601245845866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601244981509" />
-    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601244981509">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601245845866" />
+    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601245845865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601244981509" />
-    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601244981509">
+    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601245845865" />
+    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601245845865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601244981509" />
-    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601244981509">
+    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601245845865" />
+    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601245845865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601244981509" />
-    <state width="1865" height="331" key="GridCell.Tab.1.bottom" timestamp="1601244664621">
+    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601245845865" />
+    <state width="1865" height="331" key="GridCell.Tab.1.bottom" timestamp="1601245834356">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="331" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601244664621" />
-    <state width="1865" height="331" key="GridCell.Tab.1.center" timestamp="1601244664621">
+    <state width="1865" height="331" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601245834356" />
+    <state width="1865" height="331" key="GridCell.Tab.1.center" timestamp="1601245834355">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="331" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601244664621" />
-    <state width="1865" height="331" key="GridCell.Tab.1.left" timestamp="1601244664621">
+    <state width="1865" height="331" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601245834355" />
+    <state width="1865" height="331" key="GridCell.Tab.1.left" timestamp="1601245834355">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="331" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601244664621" />
-    <state width="1865" height="331" key="GridCell.Tab.1.right" timestamp="1601244664621">
+    <state width="1865" height="331" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601245834355" />
+    <state width="1865" height="331" key="GridCell.Tab.1.right" timestamp="1601245834356">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="331" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601244664621" />
+    <state width="1865" height="331" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601245834356" />
     <state x="620" y="249" width="1002" height="708" key="SettingsEditor" timestamp="1601200713864">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -237,6 +244,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601145199866" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CinemaBot$Main.ic" NAME="Main Coverage Results" MODIFIED="1601137829167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

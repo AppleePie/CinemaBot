@@ -22,13 +22,8 @@ public class Parser{
             url += tdElement.attr("href");
             var text = tdElement.text();
             var doc = new org.bson.Document();
-            for (var field : this.getClass().getFields()) {
-                try {
-                    doc.put(field.getName(), field.get(this));
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
+                doc.put("title", text);
+                doc.put("url", url);
             films.add(doc);
         });
         return films;

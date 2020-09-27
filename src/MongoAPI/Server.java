@@ -15,10 +15,10 @@ public class Server {
     public static void main(String[] args) throws IOException {
         dataHelper = new DataHelper();
         dataHelper.initDB("films");
-        getRequest(dataHelper.getAllData());
+        requestingForFilms(dataHelper.getAllData());
     }
 
-    public static void getRequest(List<Document> documents) {
+    public static void requestingForFilms(List<Document> documents) {
         try {
             try {
                 server = new ServerSocket(4004);

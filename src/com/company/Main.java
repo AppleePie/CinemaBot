@@ -15,7 +15,6 @@ public class Main
     private static BufferedReader in;
     private static BufferedWriter out;
 
-
     public static void main(String[] args) throws IOException {
         System.out.println(getFilms().get(new Random().nextInt(250)));
     }
@@ -29,7 +28,7 @@ public class Main
                 out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
 
                 var serverWord = in.readLine();
-                while (!"End".equals(serverWord)) {
+                while (!"End!".equals(serverWord)) {
                     var doc = Document.parse(serverWord);
                     films.add(new Film((String) doc.get("title"),(String) doc.get("url")));
                     serverWord = in.readLine();
@@ -40,11 +39,10 @@ public class Main
                 clientSocket.close();
                 in.close();
                 out.close();
-                return films;
             }
         } catch (IOException e) {
             System.err.println(e);
-            return films;
         }
+        return films;
     }
 }
