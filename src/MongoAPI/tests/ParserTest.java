@@ -1,6 +1,6 @@
 package MongoAPI.tests;
 
-import MongoAPI.Film;
+import Models.Film;
 import MongoAPI.Parser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

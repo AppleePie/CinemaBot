@@ -23,8 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MongoAPI/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MongoAPI/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/DataHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/DataHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Film.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Film.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/tests/ParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/tests/ParserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MongoAPI/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/DataHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MongoAPI/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MongoAPI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MongoAPI/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +71,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.MongoMain">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="CinemaBot" />
@@ -71,19 +80,21 @@
       </method>
     </configuration>
     <configuration name="MongoMain" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="MongoAPI.Main" />
+      <option name="MAIN_CLASS_NAME" value="MongoAPI.Server" />
       <module name="CinemaBot" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -125,7 +136,8 @@
       <workItem from="1601134149172" duration="567000" />
       <workItem from="1601134884887" duration="11583000" />
       <workItem from="1601154999461" duration="49000" />
-      <workItem from="1601199580697" duration="3647000" />
+      <workItem from="1601199580697" duration="4949000" />
+      <workItem from="1601236788177" duration="7923000" />
     </task>
     <servers />
   </component>
@@ -176,46 +188,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601201881508" />
-    <state width="1225" height="466" key="DebuggerActiveHint" timestamp="1601147606219">
+    <state width="1225" height="466" key="DebuggerActiveHint" timestamp="1601244419820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1225" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1601147606219" />
+    <state width="1225" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1601244419820" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1601133285285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601133285285" />
-    <state width="1867" height="270" key="GridCell.Tab.0.bottom" timestamp="1601202330508">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601244717537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601202330508" />
-    <state width="1867" height="270" key="GridCell.Tab.0.center" timestamp="1601202330508">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601244717537" />
+    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601244717537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601202330508" />
-    <state width="1867" height="270" key="GridCell.Tab.0.left" timestamp="1601202330508">
+    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601244717537" />
+    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601244717537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601202330508" />
-    <state width="1867" height="270" key="GridCell.Tab.0.right" timestamp="1601202330508">
+    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601244717537" />
+    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601244717537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601202330508" />
-    <state width="1867" height="335" key="GridCell.Tab.1.bottom" timestamp="1601201552005">
+    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601244717537" />
+    <state width="1865" height="331" key="GridCell.Tab.1.bottom" timestamp="1601244664621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="335" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601201552005" />
-    <state width="1867" height="335" key="GridCell.Tab.1.center" timestamp="1601201552005">
+    <state width="1865" height="331" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601244664621" />
+    <state width="1865" height="331" key="GridCell.Tab.1.center" timestamp="1601244664621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="335" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601201552005" />
-    <state width="1867" height="335" key="GridCell.Tab.1.left" timestamp="1601201552005">
+    <state width="1865" height="331" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601244664621" />
+    <state width="1865" height="331" key="GridCell.Tab.1.left" timestamp="1601244664621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="335" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601201552005" />
-    <state width="1867" height="335" key="GridCell.Tab.1.right" timestamp="1601201552005">
+    <state width="1865" height="331" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601244664621" />
+    <state width="1865" height="331" key="GridCell.Tab.1.right" timestamp="1601244664621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="335" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601201552005" />
+    <state width="1865" height="331" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601244664621" />
     <state x="620" y="249" width="1002" height="708" key="SettingsEditor" timestamp="1601200713864">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

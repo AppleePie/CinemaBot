@@ -1,4 +1,4 @@
-package MongoAPI;
+package Models;
 
 import org.bson.Document;
 
@@ -6,7 +6,7 @@ public class Film {
     public String Title;
     public String Url;
 
-    public Film() { }
+    private Film() { }
 
     public Film(String title, String url) {
         Title = title;
