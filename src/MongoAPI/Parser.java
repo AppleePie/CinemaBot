@@ -1,4 +1,4 @@
-package com.company;
+package MongoAPI;
 import org.jetbrains.annotations.NotNull;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -11,8 +11,8 @@ public class Parser{
         return Jsoup.connect(link).get();
     }
 
-    public ArrayList<Data> Parse(@NotNull Document document){
-        var dataList = new ArrayList<Data>();
+    public ArrayList<Film> Parse(@NotNull Document document){
+        var films = new ArrayList<Film>();
         var elements = document.getElementsByAttributeValue("class", "titleColumn");
 
         elements.forEach(element -> {
@@ -20,8 +20,8 @@ public class Parser{
             var url = "www.imdb.com";
             url += tdElement.attr("href");
             var text = tdElement.text();
-            dataList.add(new Data(url, text));
+            films.add(new Film(url, text));
         });
-        return dataList;
+        return films;
     }
 }

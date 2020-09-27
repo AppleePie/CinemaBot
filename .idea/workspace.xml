@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mongo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/bson-3.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mongo-java-driver-3.12.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mongodb-driver-core-3.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MongoAPI/DataHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MongoAPI/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaBot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Data.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MongoAPI/tests/ParserTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1i3OqZmQcssn60SztStjF4w4g6D" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/bson-3.2.2.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="JUnit.MongoAPI.tests in CinemaBot">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="CinemaBot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MongoAPI.tests in CinemaBot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CinemaBot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MongoAPI.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="MongoAPI.tests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MongoAPI.tests in CinemaBot" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="" />
+      <created>1601133004620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601133004620</updated>
+      <workItem from="1601133005915" duration="616000" />
+      <workItem from="1601134149172" duration="567000" />
+      <workItem from="1601134884887" duration="11583000" />
+      <workItem from="1601154999461" duration="49000" />
+      <workItem from="1601199580697" duration="3275000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="586" y="198" key="#Inspections" timestamp="1601201002145">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1601201002145" />
+    <state x="552" y="178" width="816" height="729" key="#Intentions" timestamp="1601145370951">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" width="816" height="729" key="#Intentions/0.0.1920.1040@0.0.1920.1040" timestamp="1601145370951" />
+    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601142717504">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601142717504" />
+    <state x="588" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1601133486977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="588" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601133486977" />
+    <state x="743" y="414" width="533" height="261" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1601202175024">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="414" width="533" height="261" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1601202175024" />
+    <state x="676" y="338" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1601137416953">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="676" y="338" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601137416953" />
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601201881508">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601201881508" />
+    <state width="1225" height="466" key="DebuggerActiveHint" timestamp="1601147606219">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1225" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1601147606219" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1601133285285">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601133285285" />
+    <state width="1867" height="270" key="GridCell.Tab.0.bottom" timestamp="1601202330508">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601202330508" />
+    <state width="1867" height="270" key="GridCell.Tab.0.center" timestamp="1601202330508">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601202330508" />
+    <state width="1867" height="270" key="GridCell.Tab.0.left" timestamp="1601202330508">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601202330508" />
+    <state width="1867" height="270" key="GridCell.Tab.0.right" timestamp="1601202330508">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601202330508" />
+    <state width="1867" height="335" key="GridCell.Tab.1.bottom" timestamp="1601201552005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="335" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601201552005" />
+    <state width="1867" height="335" key="GridCell.Tab.1.center" timestamp="1601201552005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="335" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601201552005" />
+    <state width="1867" height="335" key="GridCell.Tab.1.left" timestamp="1601201552005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="335" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601201552005" />
+    <state width="1867" height="335" key="GridCell.Tab.1.right" timestamp="1601201552005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="335" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601201552005" />
+    <state x="620" y="249" width="1002" height="708" key="SettingsEditor" timestamp="1601200713864">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="620" y="249" width="1002" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601200713864" />
+    <state x="342" y="181" key="new project wizard" timestamp="1601133014711">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="181" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1601133014711" />
+    <state x="755" y="267" key="refactoring.ChangeSignatureDialog" timestamp="1601201783966">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="755" y="267" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601201783966" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1601200568394">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601200568394" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601145199866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601145199866" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CinemaBot$Main.ic" NAME="Main Coverage Results" MODIFIED="1601137829167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
