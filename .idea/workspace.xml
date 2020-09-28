@@ -23,43 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_fluent_hc_4_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_12_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_3_12_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_3_12_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-codec-1.11.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fluent-hc-4.5.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/httpclient-4.5.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/httpcore-4.4.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mongo.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaBot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/Models/Film.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/DataHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Parser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/MongoAPI/tests/ParserTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CinemaBot/com/company/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MongoAPI/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/DataHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MongoAPI/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MongoAPI/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MongoAPI/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/tests/ParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Models/Film.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Film.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MongoAPI/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MongoAPI/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +83,7 @@
       <recent name="C:\Users\CinemaBot" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Parse.Tests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="CinemaBot" />
@@ -211,7 +183,7 @@
       <workItem from="1601313081151" duration="264000" />
       <workItem from="1601313359435" duration="394000" />
       <workItem from="1601321263341" duration="402000" />
-      <workItem from="1601321680106" duration="1052000" />
+      <workItem from="1601321680106" duration="2757000" />
     </task>
     <servers />
   </component>
@@ -286,38 +258,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601288356078" />
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601322217756">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601324399426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601322217756" />
-    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601322217756">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601324399426" />
+    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601324399426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601322217756" />
-    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601322217756">
+    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601324399426" />
+    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601324399426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601322217756" />
-    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601322217756">
+    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601324399426" />
+    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601324399426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601322217756" />
-    <state width="1865" height="297" key="GridCell.Tab.1.bottom" timestamp="1601322142796">
+    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601324399426" />
+    <state width="1865" height="297" key="GridCell.Tab.1.bottom" timestamp="1601324106295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601322142796" />
-    <state width="1865" height="297" key="GridCell.Tab.1.center" timestamp="1601322142796">
+    <state width="1865" height="297" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601324106295" />
+    <state width="1865" height="297" key="GridCell.Tab.1.center" timestamp="1601324106295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601322142796" />
-    <state width="1865" height="297" key="GridCell.Tab.1.left" timestamp="1601322142796">
+    <state width="1865" height="297" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601324106295" />
+    <state width="1865" height="297" key="GridCell.Tab.1.left" timestamp="1601324106295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601322142796" />
-    <state width="1865" height="297" key="GridCell.Tab.1.right" timestamp="1601322142796">
+    <state width="1865" height="297" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601324106295" />
+    <state width="1865" height="297" key="GridCell.Tab.1.right" timestamp="1601324106295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601322142796" />
+    <state width="1865" height="297" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601324106295" />
     <state x="374" y="91" key="Maven.ArtifactSearchDialog" timestamp="1601313371666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

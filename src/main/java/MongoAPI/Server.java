@@ -39,8 +39,9 @@ public class Server {
     
     private static String getJSONArrayFromDocuments(List<Document> data) {
         var result = new StringBuilder();
+        var separator = ";";
         for (var document: data) {
-            result.append(document.toJson()).append("\r\n");
+            result.append(document.toJson()).append(separator);
         }
         return result.toString();
     }
