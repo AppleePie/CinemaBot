@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  client:
+    build:
+      context: ./src/com/company/
+      dockerfile: Dockerfile
+    restart: always
+    container_name: client
+    ports:
+      - 4003:4003
+    depends_on:
+      - server
+  mongo:
+    image: mongo
+    container_name: database
+    restart: always
+    environment:
+      MONGODB_USER: admin
+      MONGODB_DATABASE: mongo
+      MONGODB_PASS: pass
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+
+  server:
+    build:
+      context: ./src/MongoAPI
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: mongodb://@mongo:27017/
+    restart: always
+    container_name: server
+    ports:
+      - 4004:4004
+    depends_on:
+      - mongo
+
+volumes:
+  mongodb_data:
+    driver: local
+  lib:
+    driver: local
