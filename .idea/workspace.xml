@@ -23,20 +23,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Bot/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsoup_1_13_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinemaBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaBot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bson-3.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-codec-1.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fluent-hc-4.5.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/httpclient-4.5.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/httpcore-4.4.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jsoup-1.13.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-4.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mongo-java-driver-3.12.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mongodb-driver-core-3.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/DataHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MongoAPI/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Film.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Film.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MongoAPI/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MongoAPI/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/ParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Models/Film.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MongoAPI/DataHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MongoAPI/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MongoAPI/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MongoAPI/tests/ParserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,27 +93,33 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/commons-logging-1.2.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="project.structure.side.proportion" value="0.39267015" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\CinemaBot\src\main\java\MongoAPI" />
-      <recent name="C:\Users\CinemaBot\src\test" />
-      <recent name="C:\Users\CinemaBot" />
+      <recent name="C:\Users\CinemaBot\src\main\java" />
+      <recent name="C:\Users\CinemaBot\src\main" />
+      <recent name="C:\Users\CinemaBot\" />
+      <recent name="C:\Users\CinemaBot\s" />
+      <recent name="C:\Users\CinemaBot\src" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <option name="MAIN_CLASS_NAME" value="Bot.Main" />
       <module name="CinemaBot" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,11 +150,11 @@
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MongoAPI.tests.*" />
+          <option name="PATTERN" value="test.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="MongoAPI.tests" />
+      <option name="PACKAGE_NAME" value="test.tests" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -133,12 +167,12 @@
       <module name="CinemaBot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MongoAPI.tests.*" />
+          <option name="PATTERN" value="test.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="MongoAPI.tests" />
-      <option name="MAIN_CLASS_NAME" value="MongoAPI.tests.ParserTest" />
+      <option name="PACKAGE_NAME" value="test.tests" />
+      <option name="MAIN_CLASS_NAME" value="test.tests.ParserTest" />
       <option name="METHOD_NAME" value="GetDocumentForParse_EmptyLink_Test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -183,7 +217,33 @@
       <workItem from="1601313081151" duration="264000" />
       <workItem from="1601313359435" duration="394000" />
       <workItem from="1601321263341" duration="402000" />
-      <workItem from="1601321680106" duration="2757000" />
+      <workItem from="1601321680106" duration="3449000" />
+      <workItem from="1601325146155" duration="304000" />
+      <workItem from="1601325755407" duration="834000" />
+      <workItem from="1601326604363" duration="1764000" />
+      <workItem from="1601358643782" duration="1788000" />
+      <workItem from="1601360458860" duration="132000" />
+      <workItem from="1601360606802" duration="1184000" />
+      <workItem from="1601393213434" duration="6344000" />
+      <workItem from="1601403033289" duration="721000" />
+      <workItem from="1601403768788" duration="2941000" />
+      <workItem from="1601451951355" duration="2844000" />
+      <workItem from="1601454838406" duration="171000" />
+      <workItem from="1601490238611" duration="5716000" />
+      <workItem from="1601498796915" duration="324000" />
+      <workItem from="1601499137538" duration="54000" />
+      <workItem from="1601499205543" duration="84000" />
+      <workItem from="1601499305832" duration="311000" />
+      <workItem from="1601499632275" duration="142000" />
+      <workItem from="1601499788904" duration="71000" />
+      <workItem from="1601499873028" duration="102000" />
+      <workItem from="1601499988952" duration="155000" />
+      <workItem from="1601500161389" duration="46000" />
+      <workItem from="1601500222304" duration="27000" />
+      <workItem from="1601500265810" duration="19000" />
+      <workItem from="1601500355261" duration="166000" />
+      <workItem from="1601500539469" duration="375000" />
+      <workItem from="1601500929452" duration="245000" />
     </task>
     <servers />
   </component>
@@ -214,14 +274,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" width="816" height="729" key="#Intentions/0.0.1920.1040@0.0.1920.1040" timestamp="1601145370951" />
-    <state x="312" y="0" key="#Project_Structure" timestamp="1601322237870">
+    <state x="669" y="301" key="#Notifications" timestamp="1601500272260">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="312" y="0" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1601322237870" />
-    <state x="414" y="175" width="1119" height="859" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601322300634">
+    <state x="669" y="301" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1601500272260" />
+    <state x="312" y="0" key="#Project_Structure" timestamp="1601324610876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1119" height="859" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601322300634" />
+    <state x="312" y="0" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1601324610876" />
+    <state x="414" y="123" width="1119" height="917" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601501015005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="123" width="1119" height="917" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601501015005" />
+    <state x="678" y="303" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601490809302">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="678" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601490809302" />
     <state x="637" y="316" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601313612956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -230,26 +298,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="588" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601310083958" />
-    <state x="659" y="429" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1601322721633">
+    <state x="659" y="429" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1601324505924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="659" y="429" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601322721633" />
-    <state x="743" y="414" width="533" height="261" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1601202175024">
+    <state x="659" y="429" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601324505924" />
+    <state x="743" y="414" width="533" height="324" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1601501156806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="743" y="414" width="533" height="261" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1601202175024" />
+    <state x="743" y="414" width="533" height="324" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1601501156806" />
     <state x="676" y="338" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1601137416953">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="676" y="338" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601137416953" />
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601201881508">
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601496836613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601201881508" />
-    <state width="1225" height="466" key="DebuggerActiveHint" timestamp="1601322077444">
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601496836613" />
+    <state width="1225" height="466" key="DebuggerActiveHint" timestamp="1601453329092">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1225" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1601322077444" />
+    <state width="1225" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1601453329092" />
     <state x="888" y="467" key="DetectedRootsChooserDialog" timestamp="1601287926477">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -258,46 +326,58 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601288356078" />
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601324399426">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601499120188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601324399426" />
-    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601324399426">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601499120188" />
+    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601499120188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601324399426" />
-    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601324399426">
+    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601499120188" />
+    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601499120187">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601324399426" />
-    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601324399426">
+    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601499120187" />
+    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601499120188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601324399426" />
-    <state width="1865" height="297" key="GridCell.Tab.1.bottom" timestamp="1601324106295">
+    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601499120188" />
+    <state width="1865" height="297" key="GridCell.Tab.1.bottom" timestamp="1601454798330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601324106295" />
-    <state width="1865" height="297" key="GridCell.Tab.1.center" timestamp="1601324106295">
+    <state width="1865" height="297" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601454798330" />
+    <state width="1865" height="297" key="GridCell.Tab.1.center" timestamp="1601454798330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601324106295" />
-    <state width="1865" height="297" key="GridCell.Tab.1.left" timestamp="1601324106295">
+    <state width="1865" height="297" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601454798330" />
+    <state width="1865" height="297" key="GridCell.Tab.1.left" timestamp="1601454798330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601324106295" />
-    <state width="1865" height="297" key="GridCell.Tab.1.right" timestamp="1601324106295">
+    <state width="1865" height="297" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601454798330" />
+    <state width="1865" height="297" key="GridCell.Tab.1.right" timestamp="1601454798330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601324106295" />
-    <state x="374" y="91" key="Maven.ArtifactSearchDialog" timestamp="1601313371666">
+    <state width="1865" height="297" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601454798330" />
+    <state x="374" y="91" key="Maven.ArtifactSearchDialog" timestamp="1601501149335">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="374" y="91" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601313371666" />
-    <state x="478" y="53" width="1141" height="883" key="SettingsEditor" timestamp="1601321849416">
+    <state x="374" y="91" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601501149335" />
+    <state x="478" y="53" width="1141" height="883" key="SettingsEditor" timestamp="1601500720413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="478" y="53" width="1141" height="883" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601321849416" />
+    <state x="478" y="53" width="1141" height="883" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601500720413" />
+    <state x="741" y="283" key="chooseDestDirectoryDialog" timestamp="1601501128847">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="741" y="283" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601501128847" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1601500725931">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601500725931" />
+    <state x="610" y="390" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1601499216144">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="610" y="390" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1601499216144" />
     <state x="342" y="181" key="new project wizard" timestamp="1601133014711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -310,21 +390,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601200568394" />
-    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1601312415092">
+    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup" timestamp="1601490732507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601312415092" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/MongoAPI/tests/ParserTest.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601490732507" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CinemaBot$Main.ic" NAME="Main Coverage Results" MODIFIED="1601137829167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

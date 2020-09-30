@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo
+    container_name: database
+    restart: always
+    environment:
+      MONGODB_USER: admin
+      MONGODB_DATABASE: mongo
+      MONGODB_PASS: pass
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+
+  project:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: "no"
+    container_name: builder
+
+  client:
+    build:
+      context: ./src/main/java/Bot
+      dockerfile: Dockerfile
+    restart: "no"
+    container_name: client
+
+  server:
+    build:
+      context: ./src/main/java/MongoAPI
+      dockerfile: Dockerfile
+    ports:
+    - 4004:4004
+    restart: "no"
+    container_name: server
+
+volumes:
+  mongodb_data:
+    driver: local

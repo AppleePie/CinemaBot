@@ -1,6 +1,5 @@
 package MongoAPI;
 
-import org.jetbrains.annotations.NotNull;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -12,7 +11,7 @@ public class Parser{
         return Jsoup.connect(link).get();
     }
 
-    public ArrayList<org.bson.Document> Parse(@NotNull Document document){
+    public ArrayList<org.bson.Document> Parse(Document document){
         var films = new ArrayList<org.bson.Document>();
         var elements = document.getElementsByAttributeValue("class", "titleColumn");
 

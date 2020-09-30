@@ -1,0 +1,5 @@
+Models\Film.class
+MongoAPI\Server.class
+MongoAPI\Parser.class
+MongoAPI\DataHelper.class
+Bot\Main.class

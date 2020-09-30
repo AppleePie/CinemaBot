@@ -2,6 +2,8 @@ package MongoAPI;
 
 import Models.Film;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
