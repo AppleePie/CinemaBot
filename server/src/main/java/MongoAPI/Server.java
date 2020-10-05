@@ -3,36 +3,40 @@ package MongoAPI;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpServer;
 import org.bson.Document;
+import org.jetbrains.annotations.NotNull;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Properties;
 
 public class Server {
     private static DataHelper dataHelper;
+    private static final Properties serverProperties = new Properties();
 
     public static void main(String[] args) throws IOException {
+        initServerProperties();
         dataHelper = new DataHelper();
         dataHelper.initDB("films");
-        server();
+        startServer();
     }
 
-    private static void server() throws IOException {
-        final var ip = InetAddress.getLocalHost().toString().split("/")[1];
-        System.out.println(ip + " " + "server");
-        final var socket = new InetSocketAddress(ip, 4004);
+    private static void startServer() throws IOException {
+        final InetAddress ip = InetAddress.getByName(serverProperties.getProperty("NETWORK"));
+        final int port = Integer.parseInt(serverProperties.getProperty("SERVER_PORT"));
+        final InetSocketAddress socket = new InetSocketAddress(ip.toString().split("/")[1], port);
         final HttpServer server = HttpServer.create(socket, 1);
         server.createContext("/get", he -> {
             try (he) {
                 System.out.println("Сервер активен.");
                 final Headers headers = he.getResponseHeaders();
-                final String requestMethod = he.getRequestMethod().toUpperCase();
+                final String charset = serverProperties.getProperty("CHARSET");
+                headers.set("Content-Type", String.format("application/json; charset=%s", charset));
                 
                 final String responseBody = getJSONArrayFromDocuments(dataHelper.getAllData());
-                headers.set("Content-Type", String.format("application/json; charset=%s", StandardCharsets.UTF_8));
-                final byte[] rawResponseBody = responseBody.getBytes(StandardCharsets.UTF_8);
+                final byte[] rawResponseBody = responseBody.getBytes(charset);
                 
                 he.sendResponseHeaders(200, rawResponseBody.length);
                 he.getResponseBody().write(rawResponseBody);
@@ -45,10 +49,16 @@ public class Server {
     
     private static String getJSONArrayFromDocuments(List<Document> data) {
         var result = new StringBuilder();
-        var separator = ";";
+        var separator = serverProperties.getProperty("SEPARATOR");
         for (var document: data) {
             result.append(document.toJson()).append(separator);
         }
         return result.toString();
+    }
+
+    private static void initServerProperties() throws IOException {
+        @NotNull String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+        final String serverConfigPath = rootPath + "server.properties";
+        serverProperties.load(new FileInputStream(serverConfigPath));
     }
 }

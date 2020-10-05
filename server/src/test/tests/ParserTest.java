@@ -1,6 +1,5 @@
-package test.tests;
+package tests;
 
-import Models.Film;
 import MongoAPI.Parser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -39,7 +38,7 @@ public class ParserTest {
     public void Parse_EmptyDocument_Test() throws Exception {
         var document = new Document(null);
         var dataList = classParse.Parse(document);
-        var answer = new ArrayList<Film>();
+        var answer = new ArrayList<org.bson.Document>();
         assertEquals(dataList, answer);
     }
 
@@ -49,7 +48,7 @@ public class ParserTest {
         var text = Files.readString(path);
         var document = Jsoup.parse(text);
         var dataList = classParse.Parse(document);
-        var answer = new ArrayList<Film>();
+        var answer = new ArrayList<org.bson.Document>();
         assertEquals(dataList, answer);
     }
 
@@ -59,11 +58,11 @@ public class ParserTest {
         var text = Files.readString(path);
         var document = Jsoup.parse(text);
         var dataList = classParse.Parse(document);
-        var answer = new ArrayList<Film>();
-        answer.add(new Film("Побег из Шоушенка", "www.imdb.comhttps://www.imdb.com/" +
+        var answer = new ArrayList<org.bson.Document>();
+        answer.add(new org.bson.Document("Побег из Шоушенка", "www.imdb.comhttps://www.imdb.com/" +
                 "title/tt0111161/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd" +
                 "-322d-4646-8962-327b42fe94b1&pf_rd_r=T3F8ZTZSF4PGG0R5YWPS&pf" +
                 "_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_1"));
-        assertEquals(Film.fromDocument(dataList.get(0)), answer.get(0));
+        assertEquals(dataList.get(0), answer.get(0));
     }
 }

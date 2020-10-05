@@ -29,40 +29,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="Update project architecture prepare for docker">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/MongoAPI/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/client.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/DB.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/server.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinemaBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CinemaBot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/Bot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Bot/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/MongoAPI/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/MongoAPI/DataHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/MongoAPI/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/MongoAPI/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Bot/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Bot/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Models/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/MongoAPI/DataHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/MongoAPI/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/MongoAPI/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/tests/ParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Bot.Main-jar-with-dependencies.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CinemaBot-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MongoAPI.Server-jar-with-dependencies.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Bot/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Film.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MongoAPI/DataHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MongoAPI/Parser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MongoAPI/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/tests/ParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +93,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/commons-logging-1.2.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -120,14 +107,14 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\CinemaBot\server\src\main\java" />
-      <recent name="C:\Users\CinemaBot" />
-      <recent name="C:\Users\CinemaBot\server\src\test" />
+      <recent name="C:\Users\CinemaBot\client\src\main\resources" />
+      <recent name="C:\Users\CinemaBot\server\src\main\resources" />
       <recent name="C:\Users\CinemaBot\server\src\main\java\MongoAPI" />
-      <recent name="C:\Users\CinemaBot\server" />
+      <recent name="C:\Users\CinemaBot\server\src\test" />
+      <recent name="C:\Users\CinemaBot\server\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Parse.Tests">
+  <component name="RunManager" selected="Application.BotMain">
     <configuration name="BotMain" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-15" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -140,19 +127,6 @@
     <configuration name="MongoMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="MongoAPI.Server" />
       <module name="server" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -257,8 +231,23 @@
       <workItem from="1601500539469" duration="375000" />
       <workItem from="1601500929452" duration="7325000" />
       <workItem from="1601643235597" duration="1589000" />
-      <workItem from="1601647809900" duration="5755000" />
+      <workItem from="1601647809900" duration="5792000" />
+      <workItem from="1601660200327" duration="790000" />
+      <workItem from="1601661004035" duration="4154000" />
+      <workItem from="1601675824004" duration="2615000" />
+      <workItem from="1601679641612" duration="80000" />
+      <workItem from="1601797554465" duration="39000" />
+      <workItem from="1601797619591" duration="5393000" />
+      <workItem from="1601827571345" duration="199000" />
     </task>
+    <task id="LOCAL-00001" summary="Update project architecture prepare for docker">
+      <created>1601653594067</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601653594067</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,10 +295,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="669" y="301" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1601500272260" />
-    <state x="312" y="0" key="#Project_Structure" timestamp="1601652608552">
+    <state x="312" y="0" key="#Project_Structure" timestamp="1601664019402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="312" y="0" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1601652608552" />
+    <state x="312" y="0" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1601664019402" />
     <state x="414" y="0" width="1119" height="1040" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601653533271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -350,10 +339,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="676" y="338" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601137416953" />
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601504693083">
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601660332190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601504693083" />
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601660332190" />
     <state width="1225" height="466" key="DebuggerActiveHint" timestamp="1601453329092">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -370,46 +359,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601643724420" />
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601653571325">
+    <state width="1865" height="297" key="GridCell.Tab.0.bottom" timestamp="1601827769444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601653571325" />
-    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601653571325">
+    <state width="1865" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
+    <state width="1865" height="297" key="GridCell.Tab.0.center" timestamp="1601827769444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601653571325" />
-    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601653571325">
+    <state width="1865" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
+    <state width="1865" height="297" key="GridCell.Tab.0.left" timestamp="1601827769444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601653571325" />
-    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601653571325">
+    <state width="1865" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
+    <state width="1865" height="297" key="GridCell.Tab.0.right" timestamp="1601827769444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601653571325" />
-    <state width="1865" height="297" key="GridCell.Tab.1.bottom" timestamp="1601454798330">
+    <state width="1865" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
+    <state width="1865" height="297" key="GridCell.Tab.1.bottom" timestamp="1601827769444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601454798330" />
-    <state width="1865" height="297" key="GridCell.Tab.1.center" timestamp="1601454798330">
+    <state width="1865" height="297" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
+    <state width="1865" height="297" key="GridCell.Tab.1.center" timestamp="1601827769444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601454798330" />
-    <state width="1865" height="297" key="GridCell.Tab.1.left" timestamp="1601454798330">
+    <state width="1865" height="297" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
+    <state width="1865" height="297" key="GridCell.Tab.1.left" timestamp="1601827769444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601454798330" />
-    <state width="1865" height="297" key="GridCell.Tab.1.right" timestamp="1601454798330">
+    <state width="1865" height="297" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
+    <state width="1865" height="297" key="GridCell.Tab.1.right" timestamp="1601827769444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601454798330" />
-    <state x="374" y="91" key="Maven.ArtifactSearchDialog" timestamp="1601501149335">
+    <state width="1865" height="297" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
+    <state x="374" y="91" key="Maven.ArtifactSearchDialog" timestamp="1601660976359">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="374" y="91" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601501149335" />
-    <state x="478" y="53" width="1143" height="883" key="SettingsEditor" timestamp="1601643567852">
+    <state x="374" y="91" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601660976359" />
+    <state x="478" y="53" width="1143" height="883" key="SettingsEditor" timestamp="1601827696170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="478" y="53" width="1143" height="883" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601643567852" />
+    <state x="478" y="53" width="1143" height="883" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601827696170" />
     <state x="741" y="283" key="chooseDestDirectoryDialog" timestamp="1601501128847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -426,6 +415,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="737" y="415" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601531007327" />
+    <state x="624" y="226" key="extract.method.dialog" timestamp="1601798548879">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="226" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601798548879" />
     <state x="342" y="181" key="new project wizard" timestamp="1601647829140">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -442,6 +435,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601490732507" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/Bot/Main.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/MongoAPI/Server.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CinemaBot$Main.ic" NAME="Main Coverage Results" MODIFIED="1601137829167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

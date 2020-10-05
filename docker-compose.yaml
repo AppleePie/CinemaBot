@@ -14,28 +14,21 @@ services:
     volumes:
       - mongodb_data:/data/db
 
-  project:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    restart: "no"
-    container_name: builder
-
   client:
-    build:
-      context: ./src/main/java/Bot
-      dockerfile: Dockerfile
-    restart: "no"
+    build: client
+    restart: always
     container_name: client
+    depends_on:
+      - server
 
   server:
-    build:
-      context: ./src/main/java/MongoAPI
-      dockerfile: Dockerfile
+    build: server
     ports:
     - 4004:4004
-    restart: "no"
+    restart: always
     container_name: server
+    depends_on:
+      - mongo
 
 volumes:
   mongodb_data:

@@ -1,32 +1,50 @@
 package MongoAPI;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class DataHelper {
-    private final MongoClient client = new MongoClient();
     private MongoCollection<Document> filmCollection;
+    private final Properties dataHelperProperties = new Properties();
 
     public void initDB(String collectionName) throws IOException {
+        initDataHelperProperties();
+
+        final MongoClient client = new MongoClient(new MongoClientURI(dataHelperProperties.getProperty("DATABASE")));
+
+        //TODO
         var flag = true;
         var database = client.getDatabase("myDB");
-        //TODO
             database.getCollection(collectionName);
             database.getCollection(collectionName).drop();
         filmCollection = database.getCollection(collectionName);
 
-        var url = "https://www.imdb.com/chart/top/";
+        var doc = new Document();
+            doc.put("title", "test");
+            doc.put("url", "test");
+        filmCollection.insertOne(doc);
+
+        var url = dataHelperProperties.getProperty("WEBSITE_URL");
         if (flag) {
-            filmCollection.insertMany(ParseWebSite(url));
+            filmCollection.insertMany(parseWebSite(url));
         }
     }
 
-    private List<Document> ParseWebSite(String url) throws IOException {
+    private void initDataHelperProperties() throws IOException {
+        final var rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+        final String serverConfigPath = rootPath + "DB.properties";
+        dataHelperProperties.load(new FileInputStream(serverConfigPath));
+    }
+
+    private List<Document> parseWebSite(String url) throws IOException {
         var classParse = new Parser();
         var document = classParse.GetDocumentForParse(url);
         return classParse.Parse(document);
