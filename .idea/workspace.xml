@@ -29,26 +29,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="Update project architecture prepare for docker">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/resources/client.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/DB.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/server.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/Bot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Bot/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/MongoAPI/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/MongoAPI/DataHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/resources/client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/client.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/MongoAPI/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/MongoAPI/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bot/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MongoAPI/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/tests/ParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/MongoAPI/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/MongoAPI/Server.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +56,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:\IntelliJ IDEA 2020.2.1\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="C:\D-drive-30375\IntelliJ IDEA 2020.2.1\plugins\maven\lib\maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -119,6 +104,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-15" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Bot.Main" />
+      <module name="client" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/client" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -239,6 +225,7 @@
       <workItem from="1601797554465" duration="39000" />
       <workItem from="1601797619591" duration="5393000" />
       <workItem from="1601827571345" duration="199000" />
+      <workItem from="1601922355509" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="Update project architecture prepare for docker">
       <created>1601653594067</created>
@@ -359,38 +346,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601643724420" />
-    <state width="1865" height="297" key="GridCell.Tab.0.bottom" timestamp="1601827769444">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601922971131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
-    <state width="1865" height="297" key="GridCell.Tab.0.center" timestamp="1601827769444">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601922971131" />
+    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601922971131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
-    <state width="1865" height="297" key="GridCell.Tab.0.left" timestamp="1601827769444">
+    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601922971131" />
+    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601922971131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
-    <state width="1865" height="297" key="GridCell.Tab.0.right" timestamp="1601827769444">
+    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601922971131" />
+    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601922971131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
-    <state width="1865" height="297" key="GridCell.Tab.1.bottom" timestamp="1601827769444">
+    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601922971131" />
+    <state width="1865" height="297" key="GridCell.Tab.1.bottom" timestamp="1601922956208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
-    <state width="1865" height="297" key="GridCell.Tab.1.center" timestamp="1601827769444">
+    <state width="1865" height="297" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601922956208" />
+    <state width="1865" height="297" key="GridCell.Tab.1.center" timestamp="1601922956208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
-    <state width="1865" height="297" key="GridCell.Tab.1.left" timestamp="1601827769444">
+    <state width="1865" height="297" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601922956208" />
+    <state width="1865" height="297" key="GridCell.Tab.1.left" timestamp="1601922956208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
-    <state width="1865" height="297" key="GridCell.Tab.1.right" timestamp="1601827769444">
+    <state width="1865" height="297" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601922956208" />
+    <state width="1865" height="297" key="GridCell.Tab.1.right" timestamp="1601922956208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="297" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601827769444" />
+    <state width="1865" height="297" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601922956208" />
     <state x="374" y="91" key="Maven.ArtifactSearchDialog" timestamp="1601660976359">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -435,22 +422,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="840" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601490732507" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/Bot/Main.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/MongoAPI/Server.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CinemaBot$Main.ic" NAME="Main Coverage Results" MODIFIED="1601137829167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

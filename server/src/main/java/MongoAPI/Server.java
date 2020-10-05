@@ -3,7 +3,6 @@ package MongoAPI;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpServer;
 import org.bson.Document;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -24,9 +23,9 @@ public class Server {
     }
 
     private static void startServer() throws IOException {
-        final InetAddress ip = InetAddress.getByName(serverProperties.getProperty("NETWORK"));
+        final String ip = InetAddress.getByName(serverProperties.getProperty("NETWORK")).getHostAddress();
         final int port = Integer.parseInt(serverProperties.getProperty("SERVER_PORT"));
-        final InetSocketAddress socket = new InetSocketAddress(ip.toString().split("/")[1], port);
+        final InetSocketAddress socket = new InetSocketAddress(ip, port);
         final HttpServer server = HttpServer.create(socket, 1);
         server.createContext("/get", he -> {
             try (he) {
@@ -57,7 +56,7 @@ public class Server {
     }
 
     private static void initServerProperties() throws IOException {
-        @NotNull String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+        final String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
         final String serverConfigPath = rootPath + "server.properties";
         serverProperties.load(new FileInputStream(serverConfigPath));
     }
