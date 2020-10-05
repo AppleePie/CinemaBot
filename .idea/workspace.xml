@@ -29,11 +29,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a4a8fe-8340-406c-b005-5d802e9caf80" name="Default Changelist" comment="Update project architecture prepare for docker">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/Bot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Bot/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/Models/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Models/Film.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/resources/client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/client.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/MongoAPI/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/MongoAPI/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/MongoAPI/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/MongoAPI/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/Bot/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/Bot/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/Models/Film.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/Models/Film.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/client.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/tests/ParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/MongoAPI/DataHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/MongoAPI/DataHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/MongoAPI/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/MongoAPI/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/MongoAPI/Server.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,14 +101,14 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CinemaBot\server\src\test\java" />
       <recent name="C:\Users\CinemaBot\client\src\main\resources" />
       <recent name="C:\Users\CinemaBot\server\src\main\resources" />
       <recent name="C:\Users\CinemaBot\server\src\main\java\MongoAPI" />
       <recent name="C:\Users\CinemaBot\server\src\test" />
-      <recent name="C:\Users\CinemaBot\server\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BotMain">
+  <component name="RunManager" selected="JUnit.Parse.Tests">
     <configuration name="BotMain" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-15" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -117,8 +126,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Parse.Tests" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="CinemaBot" />
+      <module name="server" />
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
@@ -131,6 +151,22 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParserTest.GetDocumentForParse_EmptyLink_Test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ParserTest" />
+      <option name="METHOD_NAME" value="GetDocumentForParse_EmptyLink_Test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,10 +192,12 @@
       <item itemvalue="Application.MongoMain" />
       <item itemvalue="JUnit.Parse.Tests" />
       <item itemvalue="JUnit.ParserTest.GetDocumentForParse_EmptyLink_Test" />
+      <item itemvalue="JUnit.ParserTest.GetDocumentForParse_EmptyLink_Test (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Parse.Tests" />
+        <item itemvalue="JUnit.ParserTest.GetDocumentForParse_EmptyLink_Test (1)" />
         <item itemvalue="JUnit.ParserTest.GetDocumentForParse_EmptyLink_Test" />
       </list>
     </recent_temporary>
@@ -225,7 +263,7 @@
       <workItem from="1601797554465" duration="39000" />
       <workItem from="1601797619591" duration="5393000" />
       <workItem from="1601827571345" duration="199000" />
-      <workItem from="1601922355509" duration="616000" />
+      <workItem from="1601922355509" duration="1609000" />
     </task>
     <task id="LOCAL-00001" summary="Update project architecture prepare for docker">
       <created>1601653594067</created>
@@ -286,10 +324,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="312" y="0" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1601664019402" />
-    <state x="414" y="0" width="1119" height="1040" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601653533271">
+    <state x="414" y="0" width="1119" height="1040" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601923914357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="0" width="1119" height="1040" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601653533271" />
+    <state x="414" y="0" width="1119" height="1040" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601923914357" />
     <state x="678" y="303" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601490809302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -346,22 +384,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601643724420" />
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601922971131">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom" timestamp="1601923883703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601922971131" />
-    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601922971131">
+    <state width="1865" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601923883703" />
+    <state width="1865" height="266" key="GridCell.Tab.0.center" timestamp="1601923883703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601922971131" />
-    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601922971131">
+    <state width="1865" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601923883703" />
+    <state width="1865" height="266" key="GridCell.Tab.0.left" timestamp="1601923883703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601922971131" />
-    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601922971131">
+    <state width="1865" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601923883703" />
+    <state width="1865" height="266" key="GridCell.Tab.0.right" timestamp="1601923883703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601922971131" />
+    <state width="1865" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601923883703" />
     <state width="1865" height="297" key="GridCell.Tab.1.bottom" timestamp="1601922956208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -382,10 +420,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="374" y="91" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601660976359" />
-    <state x="478" y="53" width="1143" height="883" key="SettingsEditor" timestamp="1601827696170">
+    <state x="478" y="53" width="1143" height="883" key="SettingsEditor" timestamp="1601923965544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="478" y="53" width="1143" height="883" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601827696170" />
+    <state x="478" y="53" width="1143" height="883" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601923965544" />
     <state x="741" y="283" key="chooseDestDirectoryDialog" timestamp="1601501128847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

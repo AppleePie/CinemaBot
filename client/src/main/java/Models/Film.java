@@ -13,15 +13,7 @@ public class Film {
         Url = url;
     }
 
-    //For Mongo...
-    public Document toDocument() throws IllegalAccessException {
-        var document = new Document();
-        for (var field : this.getClass().getFields()) {
-            document.put(field.getName(), field.get(this));
-        }
-        return document;
-    }
-
+    //for MongoDB
     public static Film fromDocument(Document document) throws IllegalAccessException {
         var film = new Film();
         for (var field: film.getClass().getFields()) {
@@ -32,7 +24,7 @@ public class Film {
     }
 
     @Override
-    public String toString() { return String.format("Название: \"%s\"\nСсылка: '%s'\n", Title, Url); }
+    public String toString() { return String.format("Title: \"%s\"\nURL: '%s'\n", Title, Url); }
 
     @Override
     public boolean equals(Object obj) {

@@ -25,8 +25,9 @@ public class Main
 
     private static List<Film> getAllFilms() throws IOException, IllegalAccessException {
         final String host = clientProperties.getProperty("NETWORK");
+        final String port = clientProperties.getProperty("NETWORK_PORT");
         final String ip = InetAddress.getByName(host).getHostAddress();
-        var jsonArray = Request.Get(String.format("http://%s:4004/get", ip))
+        var jsonArray = Request.Get(String.format("http://%s:%s/get", ip, port))
                 .execute()
                 .returnContent()
                 .asString()
