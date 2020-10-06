@@ -31,7 +31,7 @@ public class Main
                 .execute()
                 .returnContent()
                 .asString()
-                .split(";");
+                .split(clientProperties.getProperty("SEPARATOR"));
 
         var films = new ArrayList<Film>();
         for (var json: jsonArray) {

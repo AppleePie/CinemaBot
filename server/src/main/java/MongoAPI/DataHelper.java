@@ -27,11 +27,6 @@ public class DataHelper {
             database.getCollection(collectionName).drop();
         filmCollection = database.getCollection(collectionName);
 
-        var doc = new Document();
-            doc.put("title", "test");
-            doc.put("url", "test");
-        filmCollection.insertOne(doc);
-
         var url = dataHelperProperties.getProperty("WEBSITE_URL");
         if (flag) {
             filmCollection.insertMany(parseWebSite(url));
@@ -39,7 +34,7 @@ public class DataHelper {
     }
 
     private void initDataHelperProperties() throws IOException {
-        final var rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+        final String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
         final String serverConfigPath = rootPath + "DB.properties";
         dataHelperProperties.load(new FileInputStream(serverConfigPath));
     }

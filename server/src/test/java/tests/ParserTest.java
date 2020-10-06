@@ -35,7 +35,7 @@ public class ParserTest {
     }
 
     @Test
-    public void Parse_EmptyDocument_Test() throws Exception {
+    public void Parse_EmptyDocument_Test() {
         var document = new Document(null);
         var dataList = classParse.Parse(document);
         var answer = new ArrayList<org.bson.Document>();
@@ -44,7 +44,8 @@ public class ParserTest {
 
     @Test
     public void Parse_IncorrectDocument_Test() throws Exception {
-        var path = Paths.get("website imdb for test/site-small-incorrect.html");
+        final String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath().substring(1);
+        var path = Paths.get(rootPath + "website imdb for test/site-small-incorrect.html");
         var text = Files.readString(path);
         var document = Jsoup.parse(text);
         var dataList = classParse.Parse(document);
@@ -54,15 +55,19 @@ public class ParserTest {
 
     @Test
     public void Parse_CorrectDocument_Test() throws Exception {
-        var path = Paths.get("website imdb for test/site-small-correct.html");
+        final String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath().substring(1);
+        var path = Paths.get(rootPath + "website imdb for test/site-small-correct.html");
         var text = Files.readString(path);
         var document = Jsoup.parse(text);
         var dataList = classParse.Parse(document);
         var answer = new ArrayList<org.bson.Document>();
-        answer.add(new org.bson.Document("Побег из Шоушенка", "www.imdb.comhttps://www.imdb.com/" +
-                "title/tt0111161/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd" +
-                "-322d-4646-8962-327b42fe94b1&pf_rd_r=T3F8ZTZSF4PGG0R5YWPS&pf" +
-                "_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_1"));
+        var doc = new org.bson.Document();
+            doc.put("title", "Побег из Шоушенка");
+            doc.put("url", "www.imdb.comhttps://www.imdb.com/" +
+                    "title/tt0111161/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd" +
+                    "-322d-4646-8962-327b42fe94b1&pf_rd_r=T3F8ZTZSF4PGG0R5YWPS&pf" +
+                    "_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_1");
+        answer.add(doc);
         assertEquals(dataList.get(0), answer.get(0));
     }
 }
