@@ -1,0 +1,10 @@
+[Keys_to_control_snake]
+arrow_right = 261
+arrow_left = 260
+arrow_up = 259
+arrow_down = 258
+
+[Keys_to_control_window]
+enter = 10
+esc = 27
+

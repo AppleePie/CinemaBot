@@ -10,10 +10,10 @@
         <module name="server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="15">
-      <module name="CinemaBot" target="15" />
-      <module name="client" target="15" />
-      <module name="server" target="15" />
+    <bytecodeTargetLevel target="14">
+      <module name="CinemaBot" target="14" />
+      <module name="client" target="14" />
+      <module name="server" target="14" />
     </bytecodeTargetLevel>
   </component>
 </project>

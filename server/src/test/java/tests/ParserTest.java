@@ -1,6 +1,6 @@
 package tests;
 
-import MongoAPI.Parser;
+import Server.Parser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Test;
@@ -44,7 +44,7 @@ public class ParserTest {
 
     @Test
     public void Parse_IncorrectDocument_Test() throws Exception {
-        final String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath().substring(1);
+        final String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
         var path = Paths.get(rootPath + "website imdb for test/site-small-incorrect.html");
         var text = Files.readString(path);
         var document = Jsoup.parse(text);
@@ -55,7 +55,7 @@ public class ParserTest {
 
     @Test
     public void Parse_CorrectDocument_Test() throws Exception {
-        final String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath().substring(1);
+        final String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
         var path = Paths.get(rootPath + "website imdb for test/site-small-correct.html");
         var text = Files.readString(path);
         var document = Jsoup.parse(text);

@@ -6,14 +6,7 @@ public class Film {
     public String Title;
     public String Url;
 
-    private Film() { }
-
-    public Film(String title, String url) {
-        Title = title;
-        Url = url;
-    }
-
-    //for MongoDB
+    //for response from Server
     public static Film fromDocument(Document document) throws IllegalAccessException {
         var film = new Film();
         for (var field: film.getClass().getFields()) {
