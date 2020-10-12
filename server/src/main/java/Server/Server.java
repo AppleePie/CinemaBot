@@ -37,7 +37,6 @@ public class Server {
                     updateDataBase();
                 }
 
-                System.out.println("Сервер активен.");
                 final Headers headers = he.getResponseHeaders();
                 headers.set("Content-Type", String.format("application/json; charset=%s", CHARSET));
 
@@ -48,7 +47,6 @@ public class Server {
                 he.getResponseBody().write(rawResponseBody);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
-                System.out.println("Сервер отключен.");
             }
         });
 

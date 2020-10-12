@@ -9,6 +9,7 @@ import java.net.InetAddress;
 
 public class RequestHandler {
     private final static String HOST_NAME = "localhost";
+//    private final static String HOST_NAME = "server"; //for docker
     private final static int PORT = 4004;
 
     public Film getFilm() throws IOException, IllegalAccessException {

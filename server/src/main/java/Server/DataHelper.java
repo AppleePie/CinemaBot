@@ -11,8 +11,8 @@ public class DataHelper {
     private static final String USER = "postgres";
     private static final String PASS = "";
 
-    PreparedStatement state = null;
-    Connection connection = null;
+    private PreparedStatement state = null;
+    private Connection connection = null;
 
     public void initDB() throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
