@@ -28,4 +28,12 @@ public class Film {
         final Film other = (Film) obj;
         return this.Title.equals(other.Title) && this.Url.equals(other.Url);
     }
+
+    @Override
+    public int hashCode() {
+        var result = 42;
+        result = 42 * result + Title.hashCode();
+        result = 42 * result + Url.hashCode();
+        return result;
+    }
 }
