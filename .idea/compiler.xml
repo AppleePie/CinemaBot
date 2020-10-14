@@ -13,7 +13,7 @@
     <bytecodeTargetLevel target="15">
       <module name="CinemaBot" target="15" />
       <module name="client" target="15" />
-      <module name="server" target="15" />
+      <module name="server" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
