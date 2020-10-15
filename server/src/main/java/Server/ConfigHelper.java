@@ -19,10 +19,9 @@ public class ConfigHelper {
     public static void initValues() throws IOException {
         initServerProperties();
 
-        var mock = new ConfigHelper();
         for (var field: ConfigHelper.class.getFields()) {
             try {
-                field.set(mock, config.getProperty(field.getName()));
+                field.set(ConfigHelper.class, config.getProperty(field.getName()));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
