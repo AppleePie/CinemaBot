@@ -7,22 +7,18 @@ import java.util.List;
 import java.util.Random;
 
 public class DataHelper {
-    private static final String DB_URL = "jdbc:postgresql://127.0.0.1:5432/";
-    private static final String USER = "postgres";
-    private static final String PASS = "";
-
     private PreparedStatement state = null;
     private Connection connection = null;
 
     public void initDB() throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
-        connection = DriverManager.getConnection(DB_URL, USER, PASS);
+        connection = DriverManager.getConnection(ConfigHelper.DB_URL, ConfigHelper.DB_USER, ConfigHelper.DB_PASS);
         Statement state = connection.createStatement();
 
         state.execute("DROP DATABASE IF EXISTS films");
         state.execute("CREATE DATABASE films");
 
-        connection = DriverManager.getConnection(DB_URL + "films", USER, PASS);
+        connection = DriverManager.getConnection(ConfigHelper.DB_URL + "films", ConfigHelper.DB_USER, ConfigHelper.DB_PASS);
 
         PreparedStatement ps =  connection.prepareStatement("CREATE TABLE Films(id int primary key, title varchar, url text)");
         ps.executeUpdate();
