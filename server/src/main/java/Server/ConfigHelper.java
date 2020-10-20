@@ -18,6 +18,7 @@ public class ConfigHelper {
 
     public static void initValues() throws IOException {
         initServerProperties();
+
         HOST_PORT = config.getProperty("HOST_PORT");
         HOST_NAME = config.getProperty("HOST_NAME");
         SOURCE_URL = config.getProperty("SOURCE_URL");
@@ -26,7 +27,6 @@ public class ConfigHelper {
         DB_URL = config.getProperty("DB_URL");
         DB_USER = config.getProperty("DB_USER");
         DB_PASS = config.getProperty("DB_PASS");
-
     }
 
     private static void initServerProperties() throws IOException {
