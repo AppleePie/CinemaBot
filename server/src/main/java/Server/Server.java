@@ -9,7 +9,6 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Properties;
 
 public class Server {
     private final DataHelper dataHelper = new DataHelper();

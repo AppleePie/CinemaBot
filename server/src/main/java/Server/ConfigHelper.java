@@ -18,14 +18,15 @@ public class ConfigHelper {
 
     public static void initValues() throws IOException {
         initServerProperties();
+        HOST_PORT = config.getProperty("HOST_PORT");
+        HOST_NAME = config.getProperty("HOST_NAME");
+        SOURCE_URL = config.getProperty("SOURCE_URL");
+        CHARSET = config.getProperty("CHARSET");
 
-        for (var field: ConfigHelper.class.getFields()) {
-            try {
-                field.set(ConfigHelper.class, config.getProperty(field.getName()));
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        }
+        DB_URL = config.getProperty("DB_URL");
+        DB_USER = config.getProperty("DB_USER");
+        DB_PASS = config.getProperty("DB_PASS");
+
     }
 
     private static void initServerProperties() throws IOException {
