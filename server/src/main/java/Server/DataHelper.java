@@ -1,6 +1,6 @@
 package Server;
 
-import org.bson.Document;
+import Models.Film;
 
 import java.sql.*;
 import java.util.List;
@@ -10,8 +10,12 @@ public class DataHelper {
     private PreparedStatement state = null;
     private Connection connection = null;
 
-    public void initDB() throws ClassNotFoundException, SQLException {
-        Class.forName("org.postgresql.Driver");
+    public void initDB() throws SQLException {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         connection = DriverManager.getConnection(ConfigHelper.DB_URL, ConfigHelper.DB_USER, ConfigHelper.DB_PASS);
         Statement state = connection.createStatement();
 
@@ -23,37 +27,37 @@ public class DataHelper {
         PreparedStatement ps =  connection.prepareStatement("CREATE TABLE Films(id int primary key, title varchar, url text)");
         ps.executeUpdate();
     }
-    
 
-    public void insertMany(List<Document> films) throws SQLException {
+    public void insertMany(List<Film> films) throws SQLException {
         for (int index = 1; index < films.size() + 1; index++) {
             insert(index, films.get(index - 1));
         }
     }
 
-    private void insert(int id, Document inputData) throws SQLException {
+    private void insert(int id, Film film) throws SQLException {
         state = connection.prepareStatement("INSERT INTO Films(id, title, url) VALUES (?, ?, ?)");
 
         state.setInt(1, id);
-        state.setString(2, inputData.getString("title"));
-        state.setString(3, inputData.getString("url"));
+        state.setString(2, film.getTitle());
+        state.setString(3, film.getUrl());
 
         state.executeUpdate();
     }
 
-    public Document readRandomFilm() throws SQLException {
+    public Film readRandomFilm() throws SQLException {
         final int randomId = new Random().nextInt(250);
 
         state = connection.prepareStatement("SELECT * FROM Films WHERE id = ?");
         state.setInt(1, randomId);
         final ResultSet randomFilm = state.executeQuery();
 
-        final Document filmDoc = new Document();
+        Film film = null;
         if (randomFilm.next()) {
-            filmDoc.append("title", randomFilm.getString(2));
-            filmDoc.append("url", randomFilm.getString(3));
+            final String title = randomFilm.getString(2);
+            final String url = randomFilm.getString(3);
+            film = new Film(title, url);
         }
 
-        return filmDoc;
+        return film;
     }
 }

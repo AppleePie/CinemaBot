@@ -1,8 +1,6 @@
 package Bot;
 
-import Models.Film;
 import org.apache.http.client.fluent.Request;
-import org.bson.Document;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,13 +25,13 @@ public class RequestHandler {
         config.load(propertiesSource);
     }
 
-    public Film getFilm() throws IOException, IllegalAccessException {
+    public String getFilm() throws IOException, IllegalAccessException {
         final String ip = InetAddress.getByName(HOST_NAME).getHostAddress();
         var jsonResponse = Request.Get(String.format("http://%s:%d/get", ip, PORT))
                 .execute()
                 .returnContent()
                 .asString();
 
-        return Film.fromDocument(Document.parse(jsonResponse));
+        return jsonResponse;
     }
 }
