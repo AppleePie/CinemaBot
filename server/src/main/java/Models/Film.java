@@ -45,18 +45,77 @@ public class Film {
         this.url = url;
     }
 
+    @Column(name = "description")
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Column(name = "timing")
+    private String timing;
+
+    public String getTiming() {
+        return timing;
+    }
+
+    public void setTiming(String timing) {
+        this.timing = timing;
+    }
+
+    //TODO one-to-many
+//    @Column(name = "genres")
+//    private List<String> genres;
+//
+//    public List<String> getGenres() {
+//        return genres;
+//    }
+//
+//    public void setGenres(List<String> genres) {
+//        this.genres = genres;
+//    }
+
+    @Column(name = "fullReleaseDate")
+    private String fullReleaseDate;
+
+    public String getFullReleaseDate() {
+        return fullReleaseDate;
+    }
+
+    public void setFullReleaseDate(String fullReleaseDate) {
+        this.fullReleaseDate = fullReleaseDate;
+    }
+
     public Film() {
     }
 
-    public Film(Integer id, String title, String url) {
+    public Film(Integer id, String title, String url,
+                String description, String timing,
+                String fullReleaseDate) {
         this.id = id;
         this.title = title;
         this.url = url;
+        this.description = description;
+        this.timing = timing;
+        //this.genres = genres;
+        this.fullReleaseDate = fullReleaseDate;
     }
 
     @Override
     public String toString() {
-        return String.format("{ \"title\": \"%s\", \"url\": \"%s\"}", title, url);
+        return String.format(
+                "{" +
+                    "\n \"title\": \"%s\"," +
+                    "\n \"url\": \"%s\"," +
+                    "\n \"description\": \"%s\"," +
+                    "\n \"timing\": \"%s\", " +
+                    "\n \"fullReleaseDate\": \"%s\"" +
+                "\n}",
+                title, url, description, timing, fullReleaseDate);
     }
 
     @Override
@@ -66,7 +125,10 @@ public class Film {
         }
 
         final Film other = (Film) obj;
-        return this.title.equals(other.title) && this.url.equals(other.url);
+        return this.title.equals(other.title) && this.url.equals(other.url)
+                && this.description.equals(other.description)
+                && this.timing.equals(other.timing)
+                && this.fullReleaseDate.equals(other.fullReleaseDate);
     }
 
     @Override
@@ -74,6 +136,10 @@ public class Film {
         var result = 42;
         result = 42 * result + title.hashCode();
         result = 42 * result + url.hashCode();
+        result = 42 * result + description.hashCode();
+        result = 42 * result + timing.hashCode();
+//        result = 42 * result + genres.hashCode();
+        result = 42 * result + fullReleaseDate.hashCode();
         return result;
     }
 }
