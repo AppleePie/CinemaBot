@@ -1,63 +1,68 @@
 package Server;
 
 import Models.Film;
+import org.hibernate.Session;
 
-import java.sql.*;
+import javax.swing.*;
 import java.util.List;
 import java.util.Random;
 
 public class DataHelper {
-    private PreparedStatement state = null;
-    private Connection connection = null;
-
-    public void initDB() throws SQLException {
+    public void insertOne(Film film) {
+        Session session = null;
         try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        connection = DriverManager.getConnection(ConfigHelper.DB_URL, ConfigHelper.DB_USER, ConfigHelper.DB_PASS);
-        Statement state = connection.createStatement();
-
-        state.execute("DROP DATABASE IF EXISTS films");
-        state.execute("CREATE DATABASE films");
-
-        connection = DriverManager.getConnection(ConfigHelper.DB_URL + "films", ConfigHelper.DB_USER, ConfigHelper.DB_PASS);
-
-        PreparedStatement ps =  connection.prepareStatement("CREATE TABLE Films(id int primary key, title varchar, url text)");
-        ps.executeUpdate();
-    }
-
-    public void insertMany(List<Film> films) throws SQLException {
-        for (int index = 1; index < films.size() + 1; index++) {
-            insert(index, films.get(index - 1));
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.save(film);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
         }
     }
 
-    private void insert(int id, Film film) throws SQLException {
-        state = connection.prepareStatement("INSERT INTO Films(id, title, url) VALUES (?, ?, ?)");
-
-        state.setInt(1, id);
-        state.setString(2, film.getTitle());
-        state.setString(3, film.getUrl());
-
-        state.executeUpdate();
+    public void insertMany(List<Film> films) {
+        for (var film : films) {
+            insertOne(film);
+        }
     }
 
-    public Film readRandomFilm() throws SQLException {
-        final int randomId = new Random().nextInt(250);
-
-        state = connection.prepareStatement("SELECT * FROM Films WHERE id = ?");
-        state.setInt(1, randomId);
-        final ResultSet randomFilm = state.executeQuery();
-
+    public Film readRandomFilm() {
+        Session session = null;
         Film film = null;
-        if (randomFilm.next()) {
-            final String title = randomFilm.getString(2);
-            final String url = randomFilm.getString(3);
-            film = new Film(title, url);
+        var filmId = new Random().nextInt(250);
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            film = session.get(Film.class, filmId);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
         }
-
         return film;
+    }
+
+    public void clearTable() {
+        Session session = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            var allFilms = session.createCriteria(Film.class).list();
+            for (var obj : allFilms) {
+                session.delete(obj);
+            }
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'findById'", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
     }
 }

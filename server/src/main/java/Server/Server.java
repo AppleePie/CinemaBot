@@ -15,9 +15,8 @@ public class Server {
     private static final boolean checkUpdate = false;
 
     public Server() throws IOException, SQLException {
+        dataHelper.clearTable();
         ConfigHelper.initValues();
-
-        dataHelper.initDB();
         updateDataBase();
     }
 

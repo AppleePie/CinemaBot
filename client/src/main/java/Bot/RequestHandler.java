@@ -27,11 +27,10 @@ public class RequestHandler {
 
     public String getFilm() throws IOException, IllegalAccessException {
         final String ip = InetAddress.getByName(HOST_NAME).getHostAddress();
-        var jsonResponse = Request.Get(String.format("http://%s:%d/get", ip, PORT))
+
+        return Request.Get(String.format("http://%s:%d/get", ip, PORT))
                 .execute()
                 .returnContent()
                 .asString();
-
-        return jsonResponse;
     }
 }

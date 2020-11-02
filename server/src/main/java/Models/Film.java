@@ -1,32 +1,63 @@
 package Models;
 
-import org.bson.Document;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.transaction.Transactional;
 
+@Entity
+@Table(name = "films")
+@Transactional
 public class Film {
+
+    @Id
+    @Column(name = "id")
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Column(name = "title")
     private String title;
-    public String getTitle() { return title; }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @Column(name = "url")
     private String url;
-    public String getUrl() {  return url; }
 
-    public Film(String title, String url) {
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Film() {
+    }
+
+    public Film(Integer id, String title, String url) {
+        this.id = id;
         this.title = title;
         this.url = url;
     }
 
-    private Film() {}
-
-    public static Film fromDocument(Document document) throws IllegalAccessException {
-        var film = new Film();
-        for (var field: film.getClass().getFields()) {
-            var val = document.get(field.getName().toLowerCase());
-            field.set(film, val);
-        }
-        return film;
-    }
-
     @Override
-    public String toString() { return String.format("{ \"title\": \"%s\", \"url\": \"%s\"}", title, url); }
+    public String toString() {
+        return String.format("{ \"title\": \"%s\", \"url\": \"%s\"}", title, url);
+    }
 
     @Override
     public boolean equals(Object obj) {

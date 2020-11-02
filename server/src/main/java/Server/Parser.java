@@ -16,13 +16,13 @@ public class Parser{
         var films = new ArrayList<Film>();
         var elements = document.getElementsByAttributeValue("class", "titleColumn");
 
-        elements.forEach(element -> {
-            var tdElement = element.child(0);
+        for (int j = 0; j < elements.size(); j++) {
+            var tdElement = elements.get(j).child(0);
             var url = "www.imdb.com";
             url += tdElement.attr("href");
             var title = tdElement.text();
-            films.add(new Film(title, url));
-        });
+            films.add(new Film(j, title, url));
+        }
 
         return films;
     }
