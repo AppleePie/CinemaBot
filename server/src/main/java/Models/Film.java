@@ -14,55 +14,41 @@ public class Film {
     @Id
     @Column(name = "id")
     private Integer id;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     @Column(name = "title")
     private String title;
-
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
 
     @Column(name = "url")
     private String url;
-
     public String getUrl() {
         return url;
     }
-
     public void setUrl(String url) {
         this.url = url;
     }
 
     @Column(name = "description")
     private String description;
-
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
 
     @Column(name = "timing")
     private String timing;
-
     public String getTiming() {
         return timing;
     }
-
     public void setTiming(String timing) {
         this.timing = timing;
     }
@@ -81,11 +67,9 @@ public class Film {
 
     @Column(name = "fullReleaseDate")
     private String fullReleaseDate;
-
     public String getFullReleaseDate() {
         return fullReleaseDate;
     }
-
     public void setFullReleaseDate(String fullReleaseDate) {
         this.fullReleaseDate = fullReleaseDate;
     }
@@ -109,12 +93,12 @@ public class Film {
     public String toString() {
         return String.format(
                 "{" +
-                    "\n \"title\": \"%s\"," +
-                    "\n \"url\": \"%s\"," +
-                    "\n \"description\": \"%s\"," +
-                    "\n \"timing\": \"%s\", " +
-                    "\n \"fullReleaseDate\": \"%s\"" +
-                "\n}",
+                        "\n \"title\": \"%s\"," +
+                        "\n \"url\": \"%s\"," +
+                        "\n \"description\": \"%s\"," +
+                        "\n \"timing\": \"%s\", " +
+                        "\n \"fullReleaseDate\": \"%s\"\n" +
+                "}",
                 title, url, description, timing, fullReleaseDate);
     }
 
