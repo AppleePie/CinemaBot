@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Entity
 @Table(name = "films")
@@ -53,17 +54,10 @@ public class Film {
         this.timing = timing;
     }
 
-    //TODO one-to-many
-//    @Column(name = "genres")
+
 //    private List<String> genres;
-//
-//    public List<String> getGenres() {
-//        return genres;
-//    }
-//
-//    public void setGenres(List<String> genres) {
-//        this.genres = genres;
-//    }
+//    public List<String> getGenres() { return genres; }
+//    public void setGenres(List<String> genres) { this.genres = genres; }
 
     @Column(name = "fullReleaseDate")
     private String fullReleaseDate;

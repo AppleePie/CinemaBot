@@ -2,21 +2,25 @@ package Server;
 
 import Models.Film;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
-import javax.swing.*;
 import java.util.List;
 import java.util.Random;
 
 public class DataHelper {
     public void insertOne(Film film) {
         Session session = null;
+        Transaction ts = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
+            ts = session.beginTransaction();
             session.save(film);
-            session.getTransaction().commit();
+            ts.commit();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.ERROR_MESSAGE);
+            if (ts != null) {
+                ts.rollback();
+            }
+            System.err.println(e.getMessage());
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();
@@ -38,7 +42,7 @@ public class DataHelper {
             session = HibernateUtil.getSessionFactory().openSession();
             film = session.get(Film.class, filmId);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.ERROR_MESSAGE);
+            System.err.println(e.getMessage());
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();
@@ -49,16 +53,21 @@ public class DataHelper {
 
     public void clearTable() {
         Session session = null;
+        Transaction ts = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
+            ts = session.beginTransaction();
             var allFilms = session.createCriteria(Film.class).list();
             for (var obj : allFilms) {
                 session.delete(obj);
             }
-            session.getTransaction().commit();
+            ts.commit();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка 'findById'", JOptionPane.ERROR_MESSAGE);
+            System.err.println(e.getMessage());
+
+            if (ts != null) {
+                ts.rollback();
+            }
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();
