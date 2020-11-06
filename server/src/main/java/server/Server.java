@@ -1,6 +1,6 @@
-package Server;
+package server;
 
-import Models.Film;
+import models.Film;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpServer;
 

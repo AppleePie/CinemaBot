@@ -1,6 +1,6 @@
-package Server;
+package server;
 
-import Models.Film;
+import models.Film;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

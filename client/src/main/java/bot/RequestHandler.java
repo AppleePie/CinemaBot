@@ -1,4 +1,4 @@
-package Bot;
+package bot;
 
 import org.apache.http.client.fluent.Request;
 

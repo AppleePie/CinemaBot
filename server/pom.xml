@@ -15,7 +15,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>Server.Server</mainClass>
+                            <mainClass>server.Server</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

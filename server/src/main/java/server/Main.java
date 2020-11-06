@@ -1,6 +1,4 @@
-package Server;
-
-import Models.Film;
+package server;
 
 import java.io.IOException;
 import java.sql.SQLException;

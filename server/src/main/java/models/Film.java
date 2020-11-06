@@ -1,11 +1,10 @@
-package Models;
+package models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Entity
 @Table(name = "films")
