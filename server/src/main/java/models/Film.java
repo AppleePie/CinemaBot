@@ -35,6 +35,15 @@ public class Film {
         this.url = url;
     }
 
+    @Column(name = "poster")
+    private String poster;
+    public String getPoster() {
+        return poster;
+    }
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
     @Column(name = "description")
     private String description;
     public String getDescription() {
@@ -53,11 +62,6 @@ public class Film {
         this.timing = timing;
     }
 
-
-//    private List<String> genres;
-//    public List<String> getGenres() { return genres; }
-//    public void setGenres(List<String> genres) { this.genres = genres; }
-
     @Column(name = "fullReleaseDate")
     private String fullReleaseDate;
     public String getFullReleaseDate() {
@@ -71,14 +75,14 @@ public class Film {
     }
 
     public Film(Integer id, String title, String url,
-                String description, String timing,
-                String fullReleaseDate) {
+                String poster, String description,
+                String timing, String fullReleaseDate) {
         this.id = id;
         this.title = title;
         this.url = url;
+        this.poster = poster;
         this.description = description;
         this.timing = timing;
-        //this.genres = genres;
         this.fullReleaseDate = fullReleaseDate;
     }
 
@@ -88,11 +92,12 @@ public class Film {
                 "{" +
                         "\n \"title\": \"%s\"," +
                         "\n \"url\": \"%s\"," +
+                        "\n \"poster\": \"%s\"," +
                         "\n \"description\": \"%s\"," +
                         "\n \"timing\": \"%s\", " +
                         "\n \"fullReleaseDate\": \"%s\"\n" +
-                "}",
-                title, url, description, timing, fullReleaseDate);
+                        "}",
+                title, url, poster, description, timing, fullReleaseDate);
     }
 
     @Override
@@ -103,6 +108,7 @@ public class Film {
 
         final Film other = (Film) obj;
         return this.title.equals(other.title) && this.url.equals(other.url)
+                && this.poster.equals(other.poster)
                 && this.description.equals(other.description)
                 && this.timing.equals(other.timing)
                 && this.fullReleaseDate.equals(other.fullReleaseDate);
@@ -113,9 +119,9 @@ public class Film {
         var result = 42;
         result = 42 * result + title.hashCode();
         result = 42 * result + url.hashCode();
+        result = 42 * result + poster.hashCode();
         result = 42 * result + description.hashCode();
         result = 42 * result + timing.hashCode();
-//        result = 42 * result + genres.hashCode();
         result = 42 * result + fullReleaseDate.hashCode();
         return result;
     }
