@@ -14,62 +14,18 @@ public class Film {
     @Id
     @Column(name = "id")
     private Integer id;
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
-
     @Column(name = "title")
     private String title;
-    public String getTitle() {
-        return title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     @Column(name = "url")
     private String url;
-    public String getUrl() {
-        return url;
-    }
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     @Column(name = "poster")
     private String poster;
-    public String getPoster() {
-        return poster;
-    }
-    public void setPoster(String poster) {
-        this.poster = poster;
-    }
-
     @Column(name = "description")
     private String description;
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     @Column(name = "timing")
     private String timing;
-    public String getTiming() {
-        return timing;
-    }
-    public void setTiming(String timing) {
-        this.timing = timing;
-    }
-
     @Column(name = "fullReleaseDate")
     private String fullReleaseDate;
-    public String getFullReleaseDate() {
-        return fullReleaseDate;
-    }
-    public void setFullReleaseDate(String fullReleaseDate) {
-        this.fullReleaseDate = fullReleaseDate;
-    }
 
     public Film() {
     }
@@ -83,6 +39,51 @@ public class Film {
         this.poster = poster;
         this.description = description;
         this.timing = timing;
+        this.fullReleaseDate = fullReleaseDate;
+    }
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getTiming() {
+        return timing;
+    }
+    public void setTiming(String timing) {
+        this.timing = timing;
+    }
+
+    public String getFullReleaseDate() {
+        return fullReleaseDate;
+    }
+    public void setFullReleaseDate(String fullReleaseDate) {
         this.fullReleaseDate = fullReleaseDate;
     }
 
