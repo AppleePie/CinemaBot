@@ -56,7 +56,7 @@ public class Server {
 
     private List<Film> parseWebSite(String url) throws IOException {
         var classParse = new Parser();
-        var document = classParse.GetDocumentForParse(url);
-        return classParse.Parse(document);
+        var document = classParse.getDocumentForParse(url);
+        return classParse.parse(document);
     }
 }

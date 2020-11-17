@@ -191,7 +191,6 @@ public class Parser {
         urlToPageWithPoster += documentForParse
                 .select(ConfigHelper.POSTER_TAG)
                 .select(ConfigHelper.LINK_TAG)
-                .get(0)
                 .attr(ConfigHelper.LINK_ATTR);
         return urlToPageWithPoster;
     }
@@ -204,8 +203,8 @@ public class Parser {
      */
     public String getUrlToHighResolutionPoster(String urlToPageWithHighResolutionPoster) throws IOException {
         var pageWithPoster = getDocumentForParse(urlToPageWithHighResolutionPoster);
-        var partPageWithPoster = pageWithPoster.select(ConfigHelper.MULTIMEDIA_TAG).get(0);
-        var dataWithImgTag = partPageWithPoster.select(ConfigHelper.IMAGE_TAG).get(0);
+        var partPageWithPoster = pageWithPoster.select(ConfigHelper.MULTIMEDIA_TAG);
+        var dataWithImgTag = partPageWithPoster.select(ConfigHelper.IMAGE_TAG);
         var posterUrl = dataWithImgTag.attr(ConfigHelper.TAG_THE_ADDRESS_OF_THE_FILE);
         return posterUrl;
     }
