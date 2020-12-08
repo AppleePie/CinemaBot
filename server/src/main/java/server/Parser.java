@@ -1,6 +1,7 @@
 package server;
 
 import models.Film;
+import models.Genre;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -31,7 +32,7 @@ public class Parser {
      * @param document - html-представление всей страницы
      * @return лист экземпляров класса Film
      */
-    public ArrayList<Film> parse(Document document) {
+    public List<Film> parse(Document document) {
         var films = new ArrayList<Film>();
         var elements = document.select(ConfigHelper.MOVIE_TAG_IN_THE_TOP);
         for (var id = 0; id < elements.size(); id++) {
@@ -74,7 +75,7 @@ public class Parser {
         var generalInformation= getGeneralInformation(documentForParse);
         var description = getDescription(generalInformation);
 
-        var newFilm = createNewFilm(id, originalTitle, link, poster, description, timing, fullReleaseDate);
+        var newFilm = createNewFilm(id, originalTitle, link, poster, description, timing, fullReleaseDate, genres);
 
         return newFilm;
     }
@@ -135,10 +136,10 @@ public class Parser {
      * @param genreAndFullReleaseDate - лист с жанрами и полной датой релиза
      * @return возвращает все жанры фильма
      */
-    public ArrayList<String> getGenres(List<TextNode> genreAndFullReleaseDate){
-        var genres = new ArrayList<String>();
+    public List<Genre> getGenres(List<TextNode> genreAndFullReleaseDate){
+        var genres = new ArrayList<Genre>();
         for (var i = 0; i < genreAndFullReleaseDate.size() - 1; i++)
-            genres.add(genreAndFullReleaseDate.get(i).toString());
+            genres.add(new Genre(genreAndFullReleaseDate.get(i).toString()));
         return genres;
     }
 
@@ -216,11 +217,19 @@ public class Parser {
      * @param description - описание фильма
      * @param timing - хронометраж фильма
      * @param fullReleaseDate - полная дата релиза фильма
+     * @param genres
      * @return возвращает новый экземлпяр класса Film
      */
-    public Film createNewFilm(int id, String originalTitle, String link, String poster,
-                              String description, String timing, String fullReleaseDate){
-        var newFilm = new Film(id, originalTitle, link, poster, description, timing, fullReleaseDate);
+    public Film createNewFilm(
+            int id,
+            String originalTitle,
+            String link,
+            String poster,
+            String description,
+            String timing,
+            String fullReleaseDate,
+            List<Genre> genres) {
+        var newFilm = new Film(id, originalTitle, link, poster, description, timing, fullReleaseDate, genres);
         return newFilm;
     }
 }

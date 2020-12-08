@@ -8,7 +8,7 @@ import java.net.InetAddress;
 import java.util.Properties;
 
 public class RequestHandler {
-    private static Properties config = new Properties();
+    private static final Properties config = new Properties();
 
     private static String HOST_NAME;
     private static int PORT;
@@ -20,17 +20,18 @@ public class RequestHandler {
         PORT = Integer.parseInt(config.getProperty("HOST_PORT"));
     }
 
-    private void initProperties() throws IOException {
-        final InputStream propertiesSource = this.getClass().getResourceAsStream("/config.ini");
-        config.load(propertiesSource);
-    }
-
-    public String getFilm() throws IOException, IllegalAccessException {
+    public String getFilm() throws IOException {
         final String ip = InetAddress.getByName(HOST_NAME).getHostAddress();
+        final String genre = "Drama";
 
-        return Request.Get(String.format("http://%s:%d/get", ip, PORT))
+        return Request.Get(String.format("http://%s:%d/get?parts=%s", ip, PORT, genre))
                 .execute()
                 .returnContent()
                 .asString();
+    }
+
+    private void initProperties() throws IOException {
+        final InputStream propertiesSource = this.getClass().getResourceAsStream("/config.ini");
+        config.load(propertiesSource);
     }
 }

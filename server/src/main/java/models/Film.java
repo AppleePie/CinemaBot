@@ -1,10 +1,15 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+import javax.persistence.*;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "films")
@@ -27,12 +32,21 @@ public class Film {
     @Column(name = "fullReleaseDate")
     private String fullReleaseDate;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @Fetch(FetchMode.SELECT)
+    @Column(name = "genres")
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Genre> genres;
+
     public Film() {
     }
 
     public Film(Integer id, String title, String url,
                 String poster, String description,
-                String timing, String fullReleaseDate) {
+                String timing, String fullReleaseDate, List<Genre> genres) {
         this.id = id;
         this.title = title;
         this.url = url;
@@ -40,6 +54,7 @@ public class Film {
         this.description = description;
         this.timing = timing;
         this.fullReleaseDate = fullReleaseDate;
+        this.genres = genres;
     }
 
     public Integer getId() { return id; }
@@ -87,6 +102,9 @@ public class Film {
         this.fullReleaseDate = fullReleaseDate;
     }
 
+    public List<Genre> getGenres() { return genres; }
+    public void setGenres(List<Genre> genres) { this.genres = genres; }
+
     @Override
     public String toString() {
         return String.format(
@@ -96,9 +114,10 @@ public class Film {
                         "\n \"poster\": \"%s\"," +
                         "\n \"description\": \"%s\"," +
                         "\n \"timing\": \"%s\", " +
-                        "\n \"fullReleaseDate\": \"%s\"\n" +
-                        "}",
-                title, url, poster, description, timing, fullReleaseDate);
+                        "\n \"fullReleaseDate\": \"%s\"" +
+                        "\n \"genres\": \"[%s]\""+
+                "\n}",
+                title, url, poster, description, timing, fullReleaseDate, formatGenres(genres));
     }
 
     @Override
@@ -125,5 +144,9 @@ public class Film {
         result = 42 * result + timing.hashCode();
         result = 42 * result + fullReleaseDate.hashCode();
         return result;
+    }
+
+    private String formatGenres(List<Genre> genres) {
+        return genres.stream().map(Genre::getGenre).collect(Collectors.joining(", "));
     }
 }

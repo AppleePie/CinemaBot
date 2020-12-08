@@ -34,6 +34,28 @@ public class DataHelper {
         }
     }
 
+    public Film readFilmWithGenre(String genre) {
+        Session session = null;
+        Film film = null;
+        final Random rnd = new Random();
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            var allFilms = session.createCriteria(Film.class)
+                    .list()
+                    .stream()
+                    .filter(f -> ((Film) f).getGenres().contains(genre))
+                    .toArray();
+            film = (Film) allFilms[rnd.nextInt(allFilms.length)];
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return film;
+    }
+
     public Film readRandomFilm() {
         Session session = null;
         Film film = null;

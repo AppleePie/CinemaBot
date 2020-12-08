@@ -101,7 +101,7 @@ public class ParserTest {
                 "Two imprisoned men bond over a number" +
                         " of years, finding solace and eventual " +
                         "redemption through acts of common decency.",
-                "2h 22min", "14 October 1994 (USA) ");
+                "2h 22min", "14 October 1994 (USA) ", null);
         assertEquals(dataList.get(0), answer);
     }
 

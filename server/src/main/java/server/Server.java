@@ -1,5 +1,6 @@
 package server;
 
+import com.sun.net.httpserver.HttpExchange;
 import models.Film;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpServer;
@@ -7,6 +8,7 @@ import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.net.URI;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -27,26 +29,34 @@ public class Server {
         final InetSocketAddress socket = new InetSocketAddress(ip, port);
         final HttpServer server = HttpServer.create(socket, 1);
 
-        server.createContext("/get", he -> {
-            try (he) {
+        System.out.println("Server is ready.");
+        server.createContext("/get", httpExchange -> {
+            try (httpExchange) {
+                var requestBody = getBody(httpExchange);
                 if (checkUpdate) {
                     updateDataBase();
                 }
 
-                final Headers headers = he.getResponseHeaders();
+                final Headers headers = httpExchange.getResponseHeaders();
                 headers.set("Content-Type", String.format("application/json; charset=%s", ConfigHelper.CHARSET));
 
-                final String responseBody = dataHelper.readRandomFilm().toString();
+                final Film filmForGenre = dataHelper.readFilmWithGenre(requestBody);
+                final String responseBody = (filmForGenre != null ? filmForGenre : dataHelper.readRandomFilm()).toString();
                 final byte[] rawResponseBody = responseBody.getBytes(ConfigHelper.CHARSET);
 
-                he.sendResponseHeaders(200, rawResponseBody.length);
-                he.getResponseBody().write(rawResponseBody);
+                httpExchange.sendResponseHeaders(200, rawResponseBody.length);
+                httpExchange.getResponseBody().write(rawResponseBody);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
         });
 
         server.start();
+    }
+
+    private String getBody(HttpExchange httpExchange) {
+        final URI requestURI = httpExchange.getRequestURI();
+        return requestURI.toString().split("\\?")[1].split("=")[1];
     }
 
     private void updateDataBase() throws IOException, SQLException {
