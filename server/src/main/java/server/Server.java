@@ -4,6 +4,7 @@ import com.sun.net.httpserver.HttpExchange;
 import models.Film;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpServer;
+import models.Genre;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -32,7 +33,7 @@ public class Server {
         System.out.println("Server is ready.");
         server.createContext("/get", httpExchange -> {
             try (httpExchange) {
-                var requestBody = getBody(httpExchange);
+                var genre = new Genre(getBody(httpExchange));
                 if (checkUpdate) {
                     updateDataBase();
                 }
@@ -40,7 +41,7 @@ public class Server {
                 final Headers headers = httpExchange.getResponseHeaders();
                 headers.set("Content-Type", String.format("application/json; charset=%s", ConfigHelper.CHARSET));
 
-                final Film filmForGenre = dataHelper.readFilmWithGenre(requestBody);
+                final Film filmForGenre = dataHelper.readFilmWithGenre(genre);
                 final String responseBody = (filmForGenre != null ? filmForGenre : dataHelper.readRandomFilm()).toString();
                 final byte[] rawResponseBody = responseBody.getBytes(ConfigHelper.CHARSET);
 

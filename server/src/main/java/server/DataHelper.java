@@ -1,9 +1,13 @@
 package server;
 
 import models.Film;
+import models.Genre;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Random;
 
@@ -34,7 +38,7 @@ public class DataHelper {
         }
     }
 
-    public Film readFilmWithGenre(String genre) {
+    public Film readFilmWithGenre(Genre genre) {
         Session session = null;
         Film film = null;
         final Random rnd = new Random();

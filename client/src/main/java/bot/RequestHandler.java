@@ -22,7 +22,7 @@ public class RequestHandler {
 
     public String getFilm() throws IOException {
         final String ip = InetAddress.getByName(HOST_NAME).getHostAddress();
-        final String genre = "Drama";
+        final String genre = "Comedy";
 
         return Request.Get(String.format("http://%s:%d/get?parts=%s", ip, PORT, genre))
                 .execute()
