@@ -1,13 +1,14 @@
 package server;
 
 import models.Film;
+import models.Genre;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 import java.util.Random;
 
-public class DataHelper {
+public class DatabaseHelper {
     public void insertOne(Film film) {
         Session session = null;
         Transaction ts = null;
@@ -34,7 +35,7 @@ public class DataHelper {
         }
     }
 
-    public Film readFilmWithGenre(String genre) {
+    public Film readFilmWithGenre(Genre genre) {
         Session session = null;
         Film film = null;
         final Random rnd = new Random();
