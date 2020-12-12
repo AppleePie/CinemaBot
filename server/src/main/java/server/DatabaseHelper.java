@@ -5,13 +5,10 @@ import models.Genre;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Random;
 
-public class DataHelper {
+public class DatabaseHelper {
     public void insertOne(Film film) {
         Session session = null;
         Transaction ts = null;
