@@ -1,23 +1,37 @@
 package tests;
 
-import models.Film;
+import models.Genre;
 import org.junit.Before;
+import server.DocumentManager;
 import server.Parser;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+/**
+ * Тесты к классу Parser.
+ * Тестирование производится на локальных копиях
+ * страниц с топом фильмов и страницах фильмов;
+ *
+ * Краткая справка по локальным копиям страниц:
+ * film-page-correct.html - страница с фильмом "Побег из Шоушенка"
+ * с сохранением всей изначальной информации.
+ * film-page-incorrect.html - страница, где были искусственно вырезаны
+ * данные обо всех характеристиках фильма(оригинальном названии,
+ * продолжительности, жанрах и т.д.).
+ * top_films_page_correct.html - укороченная до 1 фильма
+ * страница с топом фильмов по версии imdb.
+ * top_films_page_incorrect.html - страница с топом фильмов по версии imdb,
+ * где вырезаны данные обо всех фильмах(== топ из нуля фильмов).
+ */
 public class ParserTest {
     private static Parser classParse = null;
     private static Document correctPageDocument;
@@ -36,235 +50,186 @@ public class ParserTest {
         var relativeWayToCorrectFile = "/website imdb for test/film-page-correct.html";
         var relativeWayToIncorrectFile = "/website imdb for test/film-page-incorrect.html";
 
-        correctPageDocument = getDocumentFromRelativeWayToFile(relativeWayToCorrectFile);
-        incorrectPageDocument = getDocumentFromRelativeWayToFile(relativeWayToIncorrectFile);
-    }
+        var pathToCorrectFile = Paths.get(ParserTest.class.getResource(relativeWayToCorrectFile).toURI());
+        var pathToIncorrectFile = Paths.get(ParserTest.class.getResource(relativeWayToIncorrectFile).toURI());
 
-    public Document getDocumentFromRelativeWayToFile(String relativeWayToFile) throws IOException, URISyntaxException {
-        var pathToFile = Paths.get(ParserTest.class.getResource(relativeWayToFile).toURI());
-        var readedFile = Files.readString(pathToFile);
-        return Jsoup.parse(readedFile);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void getDocumentForParse_EmptyLink() throws Exception {
-        var link = "";
-        classParse.getDocumentForParse(link);
-    }
-
-    @Test(expected = IOException.class)
-    public void getDocumentForParse_IncorrectLink() throws Exception {
-        var link = "https://www.imdb.comm";
-        classParse.getDocumentForParse(link);
+        correctPageDocument = DocumentManager.getDocumentFromPathToFile(pathToCorrectFile);
+        incorrectPageDocument = DocumentManager.getDocumentFromPathToFile(pathToIncorrectFile);
     }
 
     @Test
-    public void getDocumentForParse_CorrectLink() throws Exception {
-        var link = "http://urgu.org/";
-        assertNotNull(classParse.getDocumentForParse(link));
+    public void getLinksToAllMovie_IncorrectSite() throws URISyntaxException, IOException {
+        var relativeWayToTopFilmsPageIncorrect = "/website imdb for test/top_films_page_incorrect.html";
+        var pathToFile = Paths.get(ParserTest.class.getResource(relativeWayToTopFilmsPageIncorrect).toURI());
+        var document = DocumentManager.getDocumentFromPathToFile(pathToFile);
+        var allLinks = classParse.getLinksToAllMovie(document);
+        var answer = new ArrayList<String>();
+        assertEquals(answer, allLinks);
     }
 
     @Test
-    public void parse_EmptyDocument() {
-        var document = new Document(null);
-        var dataList = classParse.parse(document);
-        var answer = new ArrayList<Film>();
-        assertEquals(dataList, answer);
+    public void getLinksToAllMovie_CorrectSite() throws URISyntaxException, IOException {
+        var relativeWayToTopFilmsPageIncorrect = "/website imdb for test/top_films_page_correct.html";
+        var pathToFile = Paths.get(ParserTest.class.getResource(relativeWayToTopFilmsPageIncorrect).toURI());
+        var document = DocumentManager.getDocumentFromPathToFile(pathToFile);
+        var allLinks = classParse.getLinksToAllMovie(document);
+        var answer = new ArrayList<String>();
+        answer.add("https://www.imdb.com/correct_url");
+        assertEquals(answer, allLinks);
     }
 
     @Test
-    public void parse_IncorrectPage() throws IOException, URISyntaxException {
-        var relativeWayToFile = "/website imdb for test/site-small-incorrect.html";
-        var document = getDocumentFromRelativeWayToFile(relativeWayToFile);
-
-        var dataList = classParse.parse(document);
-        var answer = new ArrayList<Film>();
-        assertEquals(dataList, answer);
-    }
-
-    @Test
-    public void parse_CorrectPage() throws IOException, URISyntaxException {
-        var relativeWayToFile = "/website imdb for test/site-small-correct.html";
-        var document = getDocumentFromRelativeWayToFile(relativeWayToFile);
-
-        var dataList = classParse.parse(document);
-        var answer = new Film(
-                0, "The Shawshank Redemption",
-                "https://www.imdb.com/title/tt0111161/?" +
-                        "pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd" +
-                        "-322d-4646-8962-327b42fe94b1&pf_rd_r=T3" +
-                        "F8ZTZSF4PGG0R5YWPS&pf_rd_s=center-1&pf_" +
-                        "rd_t=15506&pf_rd_i=top&ref_=chttp_tt_1",
-                "https://m.media-amazon.com/images/M/" +
-                        "MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM" +
-                        "1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-                "Two imprisoned men bond over a number" +
-                        " of years, finding solace and eventual " +
-                        "redemption through acts of common decency.",
-                "2h 22min", "14 October 1994 (USA) ", null);
-        assertEquals(dataList.get(0), answer);
-    }
-
-    @Test
-    public void getOriginalTitle_WithoutOriginalTitleTag() {
-        var mainInformation = classParse.getMainInformation(incorrectPageDocument);
-
-        var originalTitle = classParse.getOriginalTitle(mainInformation);
+    public void getOriginalTitle_IncorrectPage(){
+        classParse.prepareDataForPageOfTheFilm(incorrectPageDocument);
+        var originalTitle = classParse.getOriginalTitle();
         var answer = "Побег из Шоушенка";
-        assertEquals(originalTitle, answer);
+        assertEquals(answer, originalTitle);
     }
 
     @Test
-    public void getOriginalTitle_WithOriginalTitleTag() {
-        var mainInformation = classParse.getMainInformation(correctPageDocument);
-
-        var originalTitle = classParse.getOriginalTitle(mainInformation);
+    public void getOriginalTitle_CorrectPage(){
+        classParse.prepareDataForPageOfTheFilm(correctPageDocument);
+        var originalTitle = classParse.getOriginalTitle();
         var answer = "The Shawshank Redemption";
-        assertEquals(originalTitle, answer);
+        assertEquals(answer, originalTitle);
     }
 
     @Test
-    public void getUrlToPageWithHighResolutionPoster_IncorrectPage() {
-        var urlToPage = classParse.getUrlToPageWithHighResolutionPoster(incorrectPageDocument);
-        var answer = "https://www.imdb.com";
-        assertEquals(urlToPage, answer);
-    }
-
-    @Test
-    public void getUrlToPageWithHighResolutionPoster_CorrectPage() {
-        var urlToPage = classParse.getUrlToPageWithHighResolutionPoster(correctPageDocument);
-        var answer = "https://www.imdb.com/title/tt0111161/mediaviewer/rm10105600?ref_=tt_ov_i";
-        assertEquals(urlToPage, answer);
-    }
-
-    @Test
-    public void getUrlToHighResolutionPoster_IncorrectPage() throws IOException {
-        var urlToPage = classParse.getUrlToPageWithHighResolutionPoster(incorrectPageDocument);
-        var urlToHighResolutionPage = classParse.getUrlToHighResolutionPoster(urlToPage);
+    public void getFilmTiming_IncorrectPage(){
+        classParse.prepareDataForPageOfTheFilm(incorrectPageDocument);
+        var timing = classParse.getFilmTiming();
         var answer = "";
-        assertEquals(urlToHighResolutionPage, answer);
+        assertEquals(answer, timing);
     }
 
     @Test
-    public void getUrlToHighResolutionPoster_CorrectPage() throws IOException {
-        var urlToPage = classParse.getUrlToPageWithHighResolutionPoster(correctPageDocument);
-        var urlToHighResolutionPage = classParse.getUrlToHighResolutionPoster(urlToPage);
-        var answer = "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIz" +
-                "LWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg";
-        assertEquals(urlToHighResolutionPage, answer);
-    }
-
-    @Test
-    public void getPosterUrl_IncorrectPage() throws IOException {
-        var posterUrl = classParse.getPosterUrl(incorrectPageDocument);
-        var answer = "";
-        assertEquals(posterUrl, answer);
-    }
-
-    @Test
-    public void getPosterUrl_CorrectPage() throws IOException {
-        var posterUrl = classParse.getPosterUrl(correctPageDocument);
-        var answer = "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIz" +
-                "LWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg";
-        assertEquals(posterUrl, answer);
-    }
-
-    @Test
-    public void getFilmTiming_IncorrectPage() {
-        var mainInformation = classParse.getMainInformation(incorrectPageDocument);
-        var subtextElements = classParse.getSubtextElements(mainInformation);
-        var timing = classParse.getFilmTiming(subtextElements);
-        var answer = "";
-        assertEquals(timing, answer);
-    }
-
-    @Test
-    public void getFilmTiming_CorrectPage() {
-        var mainInformation = classParse.getMainInformation(correctPageDocument);
-        var subtextElements = classParse.getSubtextElements(mainInformation);
-        var timing = classParse.getFilmTiming(subtextElements);
+    public void getFilmTiming_CorrectPage(){
+        classParse.prepareDataForPageOfTheFilm(correctPageDocument);
+        var timing = classParse.getFilmTiming();
         var answer = "2h 22min";
-        assertEquals(timing, answer);
+        assertEquals(answer, timing);
     }
 
     @Test
-    public void getGenreAndFullReleaseDate_IncorrectPage() {
-        var mainInformation = classParse.getMainInformation(incorrectPageDocument);
-        var subtextElements = classParse.getSubtextElements(mainInformation);
-        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate(subtextElements).get(0).text();
+    public void getGenreAndFullReleaseDate_IncorrectPage(){
+        classParse.prepareDataForPageOfTheFilm(incorrectPageDocument);
+        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate().get(0).text();
         var answer = " ";
-        assertEquals(genreAndFullReleaseDate, answer);
+        assertEquals(answer, genreAndFullReleaseDate);
     }
 
     @Test
-    public void getGenreAndFullReleaseDate_CorrectPage() {
-        var mainInformation = classParse.getMainInformation(correctPageDocument);
-        var subtextElements = classParse.getSubtextElements(mainInformation);
-        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate(subtextElements);
+    public void getGenreAndFullReleaseDate_CorrectPage(){
+        classParse.prepareDataForPageOfTheFilm(correctPageDocument);
+        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate();
         var data = new ArrayList<String>();
         genreAndFullReleaseDate.forEach(x -> data.add(x.text()));
         var answer = new ArrayList<>(Arrays.asList("Drama", "14 October 1994 (USA) "));
-        assertEquals(data, answer);
+        assertEquals(answer, data);
     }
 
     @Test
     public void getGenres_IncorrectPage() {
-        var mainInformation = classParse.getMainInformation(incorrectPageDocument);
-        var subtextElements = classParse.getSubtextElements(mainInformation);
-        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate(subtextElements);
-
+        classParse.prepareDataForPageOfTheFilm(incorrectPageDocument);
+        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate();
         var genres = classParse.getGenres(genreAndFullReleaseDate);
-        var answer = new ArrayList<String>();
-        assertEquals(genres, answer);
+        var answer = new ArrayList<Genre>();
+        assertEquals(answer, genres);
     }
 
     @Test
     public void getGenres_CorrectPage() {
-        var mainInformation = classParse.getMainInformation(correctPageDocument);
-        var subtextElements = classParse.getSubtextElements(mainInformation);
-        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate(subtextElements);
-
+        classParse.prepareDataForPageOfTheFilm(correctPageDocument);
+        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate();
         var genres = classParse.getGenres(genreAndFullReleaseDate);
-        var answer = new ArrayList<>(Collections.singletonList("Drama"));
-        assertEquals(genres, answer);
+        var answer = new ArrayList<>(Collections.singletonList(new Genre("Drama")));
+        assertEquals(answer, genres);
     }
 
     @Test
     public void getFullReleaseDate_IncorrectPage() {
-        var mainInformation = classParse.getMainInformation(incorrectPageDocument);
-        var subtextElements = classParse.getSubtextElements(mainInformation);
-        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate(subtextElements);
-
+        classParse.prepareDataForPageOfTheFilm(incorrectPageDocument);
+        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate();
         var fullReleaseDate = classParse.getFullReleaseDate(genreAndFullReleaseDate);
         var answer = " ";
-        assertEquals(fullReleaseDate, answer);
+        assertEquals(answer, fullReleaseDate);
     }
 
     @Test
     public void getFullReleaseDate_CorrectPage() {
-        var mainInformation = classParse.getMainInformation(correctPageDocument);
-        var subtextElements = classParse.getSubtextElements(mainInformation);
-        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate(subtextElements);
-
+        classParse.prepareDataForPageOfTheFilm(correctPageDocument);
+        var genreAndFullReleaseDate = classParse.getGenreAndFullReleaseDate();
         var fullReleaseDate = classParse.getFullReleaseDate(genreAndFullReleaseDate);
         var answer = "14 October 1994 (USA) ";
-        assertEquals(fullReleaseDate, answer);
+        assertEquals(answer, fullReleaseDate);
     }
 
     @Test
     public void getDescription_IncorrectPage() {
-        var generalInformation= classParse.getGeneralInformation(incorrectPageDocument);
-        var description = classParse.getDescription(generalInformation);
+        classParse.prepareDataForPageOfTheFilm(incorrectPageDocument);
+        var description = classParse.getDescription();
         var answer = "";
-        assertEquals(description, answer);
+        assertEquals(answer, description);
     }
 
     @Test
     public void getDescription_CorrectPage() {
-        var generalInformation= classParse.getGeneralInformation(correctPageDocument);
-        var description = classParse.getDescription(generalInformation);
+        classParse.prepareDataForPageOfTheFilm(correctPageDocument);
+        var description = classParse.getDescription();
         var answer = "Two imprisoned men bond over a number of years, " +
                 "finding solace and eventual redemption through acts of common decency.";
-        assertEquals(description, answer);
+        assertEquals(answer, description);
+    }
+
+    @Test
+    public void getPosterUrl_IncorrectPage() throws IOException {
+        classParse.prepareDataForPageOfTheFilm(incorrectPageDocument);
+        var posterUrl = classParse.getPosterUrl();
+        var answer = "";
+        assertEquals(answer, posterUrl);
+    }
+
+    @Test
+    public void getPosterUrl_CorrectPage() throws IOException {
+        classParse.prepareDataForPageOfTheFilm(correctPageDocument);
+        var posterUrl = classParse.getPosterUrl();
+        var answer = "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIz" +
+                "LWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg";
+        assertEquals(answer, posterUrl);
+    }
+
+    @Test
+    public void getUrlToPageWithHighResolutionPoster_IncorrectPage() {
+        classParse.prepareDataForPageOfTheFilm(incorrectPageDocument);
+        var urlToPage = classParse.getUrlToPageWithHighResolutionPoster();
+        var answer = "https://www.imdb.com";
+        assertEquals(answer, urlToPage);
+    }
+
+    @Test
+    public void getUrlToPageWithHighResolutionPoster_CorrectPage() {
+        classParse.prepareDataForPageOfTheFilm(correctPageDocument);
+        var urlToPage = classParse.getUrlToPageWithHighResolutionPoster();
+        var answer = "https://www.imdb.com/title/tt0111161/mediaviewer/rm10105600?ref_=tt_ov_i";
+        assertEquals(answer, urlToPage);
+    }
+
+    @Test
+    public void getUrlToHighResolutionPoster_IncorrectPage() throws IOException {
+        classParse.prepareDataForPageOfTheFilm(incorrectPageDocument);
+        var urlToPage = classParse.getUrlToPageWithHighResolutionPoster();
+        var urlToHighResolutionPage = classParse.getUrlToHighResolutionPoster(urlToPage);
+        var answer = "";
+        assertEquals(answer, urlToHighResolutionPage);
+    }
+
+    @Test
+    public void getUrlToHighResolutionPoster_CorrectPage() throws IOException {
+        classParse.prepareDataForPageOfTheFilm(correctPageDocument);
+        var urlToPage = classParse.getUrlToPageWithHighResolutionPoster();
+        var urlToHighResolutionPage = classParse.getUrlToHighResolutionPoster(urlToPage);
+        var answer = "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIz" +
+                "LWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg";
+        assertEquals(answer, urlToHighResolutionPage);
     }
 }
