@@ -24,7 +24,7 @@ public class UserIntentionHandler {
         GENRES = ConfigReader.fillConfigArray(config,"GENRES");
     }
 
-    public Pair<String, ArrayList<String>> prepareResponseToUserIntent(String userIntention){
+    public Pair<String, ArrayList<String>> prepareResponseToUserIntent(String userIntention) throws IOException {
         var response = "";
         ArrayList<String> arrayForTelegramKeyboardOptions;
         if (REACTION_TO_USER_INTENTION.containsKey(userIntention)) {
@@ -36,12 +36,9 @@ public class UserIntentionHandler {
                 arrayForTelegramKeyboardOptions = PHRASES;
         }
         else {
-            if (userIntention.equals("GetRandom"))
-                // TODO response = GetFilm("Random")
-                response = "*Random*";
-            else
-                // TODO response = GetFilm(userIntention)
-                response = userIntention;
+            response = (userIntention.equals("GetRandom")
+                        ? RequestHandler.getFilm("random")
+                        : RequestHandler.getFilm(userIntention));
             arrayForTelegramKeyboardOptions = PHRASES;
         }
         var responseToUserAndArrayForTelegramKeyboard = new Pair<>(response, arrayForTelegramKeyboardOptions);

@@ -1,5 +1,6 @@
 package bot;
 
+import org.glassfish.grizzly.utils.Pair;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -51,7 +52,12 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
 
         var userIntention = userMessageParser.parseUserMessage(update);
-        var responseToUserIntent = userIntentionHandler.prepareResponseToUserIntent(userIntention);
+        Pair<String, ArrayList<String>> responseToUserIntent = null;
+        try {
+            responseToUserIntent = userIntentionHandler.prepareResponseToUserIntent(userIntention);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         var responseMessage = responseToUserIntent.getFirst();
         var responseTelegramKeyboardOptions = responseToUserIntent.getSecond();
         var chatId = update.getMessage().getChatId().toString();

@@ -10,8 +10,8 @@ import java.util.Properties;
 public class RequestHandler {
     private static final Properties config = new Properties();
 
-    private static String HOST_NAME;
-    private static int PORT;
+    private static final String HOST_NAME;
+    private static final int PORT;
 
     static {
         try {
@@ -34,7 +34,7 @@ public class RequestHandler {
     }
 
     private static void initProperties() throws IOException {
-        final InputStream propertiesSource = RequestHandler.class.getClass().getResourceAsStream("/config.ini");
+        final InputStream propertiesSource = RequestHandler.class.getResourceAsStream("/config.ini");
         config.load(propertiesSource);
     }
 }
