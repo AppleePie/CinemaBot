@@ -10,28 +10,31 @@ import java.util.Properties;
 public class RequestHandler {
     private static final Properties config = new Properties();
 
-    private static String HOST_NAME;
-    private static int PORT;
+    private static final String HOST_NAME;
+    private static final int PORT;
 
-    public RequestHandler() throws IOException {
-        initProperties();
+    static {
+        try {
+            initProperties();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         HOST_NAME = config.getProperty("HOST_NAME");
         PORT = Integer.parseInt(config.getProperty("HOST_PORT"));
     }
 
-    public String getFilm() throws IOException {
+    public static String getFilm(String criteria) throws IOException {
         final String ip = InetAddress.getByName(HOST_NAME).getHostAddress();
-        final String genre = "Comedy";
 
-        return Request.Get(String.format("http://%s:%d/get?parts=%s", ip, PORT, genre))
+        return Request.Get(String.format("http://%s:%d/get?parts=%s", ip, PORT, criteria))
                 .execute()
                 .returnContent()
                 .asString();
     }
 
-    private void initProperties() throws IOException {
-        final InputStream propertiesSource = this.getClass().getResourceAsStream("/config.ini");
+    private static void initProperties() throws IOException {
+        final InputStream propertiesSource = RequestHandler.class.getResourceAsStream("/config.ini");
         config.load(propertiesSource);
     }
 }
