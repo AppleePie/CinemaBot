@@ -2,7 +2,10 @@ package bot;
 
 import org.glassfish.grizzly.utils.Pair;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
+import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
@@ -58,13 +61,13 @@ public class TelegramBot extends TelegramLongPollingBot {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        var responseMessage = responseToUserIntent.getFirst();
+        var dataForMessage = responseToUserIntent.getFirst();
         var responseTelegramKeyboardOptions = responseToUserIntent.getSecond();
         var chatId = update.getMessage().getChatId().toString();
-        sendReplyMessage(chatId, responseMessage, responseTelegramKeyboardOptions);
+        sendReplyMessage(chatId, dataForMessage, responseTelegramKeyboardOptions);
     }
 
-    private void sendResponse(SendMessage response) {
+    private void sendResponse(SendPhoto response) {
         try {
             execute(response);
         } catch (TelegramApiException e) {
@@ -72,13 +75,16 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    public synchronized void sendReplyMessage(String chatId, String message, ArrayList<String> opinionForKeyboard) {
-        var sendMessage = new SendMessage(chatId, message);
-        setKeyboardForMessage(sendMessage, opinionForKeyboard);
-        sendResponse(sendMessage);
+    public synchronized void sendReplyMessage(
+            String chatId, String dataForMessage,
+            ArrayList<String> opinionForKeyboard) {
+        var message = FilmMessageFactory.convertBotResponseToMessage(dataForMessage);
+        setKeyboardForMessage(message, opinionForKeyboard);
+        message.setChatId(chatId);
+        sendResponse(message);
     }
 
-    public synchronized void setKeyboardForMessage(SendMessage sendMessage, ArrayList<String> opinionForKeyboard) {
+    public synchronized void setKeyboardForMessage(SendPhoto sendMessage, ArrayList<String> opinionForKeyboard) {
         var choiceFunctionSelectFilmKeyboardRow = getKeyboardRow(opinionForKeyboard);
         var keyboardForChoiceFunctionSelectFilm = new ReplyKeyboardMarkup(
                 choiceFunctionSelectFilmKeyboardRow, true, false, true);
