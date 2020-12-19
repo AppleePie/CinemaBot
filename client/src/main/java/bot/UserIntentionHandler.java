@@ -37,8 +37,8 @@ public class UserIntentionHandler {
         }
         else {
             response = (userIntention.equals("GetRandom")
-                        ? RequestHandler.getFilm("random")
-                        : RequestHandler.getFilm(userIntention));
+                        ? RequestHandler.getFilmAsJson("random")
+                        : RequestHandler.getFilmAsJson(userIntention));
             arrayForTelegramKeyboardOptions = PHRASES;
         }
         var responseToUserAndArrayForTelegramKeyboard = new Pair<>(response, arrayForTelegramKeyboardOptions);

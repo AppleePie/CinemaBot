@@ -5,8 +5,10 @@ import models.Genre;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class DatabaseHelper {
     public void insertOne(Film film) {
@@ -57,6 +59,26 @@ public class DatabaseHelper {
         return film;
     }
 
+    public ArrayList<Film> readFilmWithYear(String year) {
+        Session session = null;
+        ArrayList<Film> filmsThisYear = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            filmsThisYear = (ArrayList<Film>) session.createCriteria(Film.class)
+                    .list()
+                    .stream()
+                    .filter(f -> ((Film) f).getFullReleaseDate().contains(year))
+                    .collect(Collectors.toCollection(ArrayList<String>::new));
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return filmsThisYear;
+    }
+
     public Film readRandomFilm() {
         Session session = null;
         Film film = null;
@@ -96,5 +118,73 @@ public class DatabaseHelper {
                 session.close();
             }
         }
+    }
+
+    public ArrayList<String> getAllAvailableGenresAsStrings() {
+        Session session = null;
+        Transaction ts = null;
+        ArrayList<String> allGenres = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            ts = session.beginTransaction();
+            allGenres = (ArrayList<String>) session.createCriteria(Genre.class)
+                    .list()
+                    .stream()
+                    .map(g -> ((Genre) g).getValue())
+                    .distinct()
+                    .collect(Collectors.toCollection(ArrayList<String>::new));
+            ts.commit();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+
+            if (ts != null) {
+                ts.rollback();
+            }
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+
+        return allGenres;
+    }
+
+    public ArrayList<String> getAllAvailableReleaseYearsAsStrings() {
+        Session session = null;
+        Transaction ts = null;
+        ArrayList<String> allReleaseYears = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            ts = session.beginTransaction();
+            allReleaseYears = (ArrayList<String>) session.createCriteria(Film.class)
+                    .list()
+                    .stream()
+                    .map(f -> findYear(((Film) f).getFullReleaseDate()))
+                    .distinct()
+                    .collect(Collectors.toCollection(ArrayList<String>::new));
+            allReleaseYears.sort(Collections.reverseOrder());
+            ts.commit();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+
+            if (ts != null) {
+                ts.rollback();
+            }
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+
+        return allReleaseYears;
+    }
+
+    private String findYear(String date) {
+        var pattern = Pattern.compile("\\d{4}");
+        Matcher matcher = pattern.matcher(date);
+        if (matcher.find()) {
+            return matcher.group();
+        }
+        throw new IllegalArgumentException("Date should have year!");
     }
 }

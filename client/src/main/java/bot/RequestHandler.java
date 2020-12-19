@@ -5,12 +5,15 @@ import org.apache.http.client.fluent.Request;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class RequestHandler {
     private static final Properties config = new Properties();
 
-    private static final String HOST_NAME;
+    private static String IP;
     private static final int PORT;
 
     static {
@@ -20,14 +23,35 @@ public class RequestHandler {
             e.printStackTrace();
         }
 
-        HOST_NAME = config.getProperty("HOST_NAME");
+        var host = config.getProperty("HOST_NAME");
         PORT = Integer.parseInt(config.getProperty("HOST_PORT"));
+
+        try {
+            IP = InetAddress.getByName(host).getHostAddress();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static String getFilm(String criteria) throws IOException {
-        final String ip = InetAddress.getByName(HOST_NAME).getHostAddress();
+    public static ArrayList<String> getAllReleaseYears() throws IOException {
+        return getAllStrsFor("allYears");
+    }
 
-        return Request.Get(String.format("http://%s:%d/get?parts=%s", ip, PORT, criteria))
+    public static ArrayList<String> getAllAvailableGenres() throws IOException {
+        return getAllStrsFor("allGenres");
+    }
+
+    public static String getFilmAsJson(String option) throws IOException {
+        return getResponseFor(option);
+    }
+
+    private static ArrayList<String> getAllStrsFor(String request) throws IOException {
+        String[] allStrs = getResponseFor(request).split("&");
+        return new ArrayList<>(Arrays.asList(allStrs));
+    }
+
+    private static String getResponseFor(String criteria) throws IOException {
+        return Request.Get(String.format("http://%s:%d/get?parts=%s", IP, PORT, criteria))
                 .execute()
                 .returnContent()
                 .asString();

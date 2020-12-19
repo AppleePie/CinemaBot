@@ -106,16 +106,17 @@ public class Film {
 
     @Override
     public String toString() {
+
         return String.format(
                 "{" +
-                        "\n \"title\": \"%s\"," +
-                        "\n \"url\": \"%s\"," +
-                        "\n \"poster\": \"%s\"," +
-                        "\n \"description\": \"%s\"," +
-                        "\n \"timing\": \"%s\", " +
-                        "\n \"fullReleaseDate\": \"%s\"" +
-                        "\n \"genres\": \"[%s]\""+
-                "\n}",
+                        "title: \"%s\"," +
+                        "url: \"%s\"," +
+                        "poster: \"%s\"," +
+                        "description: \"%s\"," +
+                        "timing: \"%s\", " +
+                        "fullReleaseDate: \"%s\"," +
+                        "genres: [%s]"+
+                "}",
                 title, url, poster, description, timing, fullReleaseDate, formatGenres(genres));
     }
 
