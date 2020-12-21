@@ -46,7 +46,7 @@ public class RequestHandler {
     }
 
     private static ArrayList<String> getAllStrsFor(String request) throws IOException {
-        String[] allStrs = getResponseFor(request).split("&");
+        String[] allStrs = getResponseFor(request).split(";");
         return new ArrayList<>(Arrays.asList(allStrs));
     }
 

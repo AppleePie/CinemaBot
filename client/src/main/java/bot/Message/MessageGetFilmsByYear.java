@@ -31,7 +31,7 @@ public class MessageGetFilmsByYear implements IBotBaseMessage, IBotMoreMessagesR
     @Override
     public ArrayList<SendPhoto> preparePhotoMessage(String userMessage) throws IOException {
         var responseToUserMessage = prepareResponseToMessage(userMessage);
-        var messageText = responseToUserMessage.getFirst().split("&");
+        var messageText = responseToUserMessage.getFirst().split(";");
         var messageKeyboard = responseToUserMessage.getSecond();
 
         var listMessages = new ArrayList<SendPhoto>();
