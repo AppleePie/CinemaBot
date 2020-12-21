@@ -7,9 +7,13 @@ public class UserIntentionDeterminer {
     private static ArrayList<String> GENRES;
     private static ArrayList<String> YEARS;
 
-    UserIntentionDeterminer() throws IOException {
-        GENRES = RequestHandler.getAllAvailableGenres();
-        YEARS = RequestHandler.getAllReleaseYears();
+    static {
+        try {
+            GENRES = RequestHandler.getAllAvailableGenres();
+            YEARS = RequestHandler.getAllReleaseYears();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static UserIntention determineUserIntentions(String userMessage) {

@@ -36,7 +36,7 @@ public class ImdbInformationManager {
         return databaseHelper.readFilmWithYear(userInput)
                 .stream()
                 .map(Film::toString)
-                .collect(Collectors.joining("&"));
+                .collect(Collectors.joining(";"));
     }
 
     private static List<Film> parseImdbTopFilms() throws IOException {

@@ -27,6 +27,7 @@ public class ConfigHelper {
     public static String MULTIMEDIA_TAG;
     public static String IMAGE_TAG;
     public static String TAG_THE_ADDRESS_OF_THE_FILE;
+    public static String DELIMITER;
 
     static {
         try {
@@ -56,6 +57,7 @@ public class ConfigHelper {
         MULTIMEDIA_TAG = config.getProperty("MULTIMEDIA_TAG");
         IMAGE_TAG = config.getProperty("IMAGE_TAG");
         TAG_THE_ADDRESS_OF_THE_FILE = config.getProperty("TAG_THE_ADDRESS_OF_THE_FILE");
+        DELIMITER = config.getProperty("DELIMITER");
     }
 
     private static void initServerProperties() throws IOException {

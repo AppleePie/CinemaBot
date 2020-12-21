@@ -11,23 +11,11 @@ import java.util.Arrays;
 import java.util.Properties;
 
 public class RequestHandler {
-    private static final Properties config = new Properties();
-
     private static String IP;
-    private static final int PORT;
 
     static {
         try {
-            initProperties();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        var host = config.getProperty("HOST_NAME");
-        PORT = Integer.parseInt(config.getProperty("HOST_PORT"));
-
-        try {
-            IP = InetAddress.getByName(host).getHostAddress();
+            IP = InetAddress.getByName(ConfigHelper.HOST).getHostAddress();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
@@ -46,19 +34,14 @@ public class RequestHandler {
     }
 
     private static ArrayList<String> getAllStrsFor(String request) throws IOException {
-        String[] allStrs = getResponseFor(request).split("&");
+        String[] allStrs = getResponseFor(request).split(ConfigHelper.DELIMITER);
         return new ArrayList<>(Arrays.asList(allStrs));
     }
 
     private static String getResponseFor(String criteria) throws IOException {
-        return Request.Get(String.format("http://%s:%d/get?parts=%s", IP, PORT, criteria))
+        return Request.Get(String.format("http://%s:%d/get?parts=%s", IP, ConfigHelper.PORT, criteria))
                 .execute()
                 .returnContent()
                 .asString();
-    }
-
-    private static void initProperties() throws IOException {
-        final InputStream propertiesSource = RequestHandler.class.getResourceAsStream("/config.ini");
-        config.load(propertiesSource);
     }
 }
