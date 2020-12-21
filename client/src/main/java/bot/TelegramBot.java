@@ -2,10 +2,8 @@ package bot;
 
 import org.glassfish.grizzly.utils.Pair;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
-import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
@@ -44,27 +42,25 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        UserMessageParser userMessageParser = null;
-        UserIntentionHandler userIntentionHandler = null;
-
+        var botMessageFactoryClass = new BotMessageFactory();
+        var pairPhotoPostAndMessages = new Pair<ArrayList<SendPhoto>, ArrayList<SendMessage>>();
         try {
-            userMessageParser = new UserMessageParser();
-            userIntentionHandler = new UserIntentionHandler();
+            pairPhotoPostAndMessages = botMessageFactoryClass.replyToUserMessage(update);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        var listPhotoMessages = pairPhotoPostAndMessages.getFirst();
+        var listMessages = pairPhotoPostAndMessages.getSecond();
+        listPhotoMessages.forEach(this::sendResponse);
+        listMessages.forEach(this::sendResponse);
+    }
 
-        var userIntention = userMessageParser.parseUserMessage(update);
-        Pair<String, ArrayList<String>> responseToUserIntent = null;
+    private void sendResponse(SendMessage response) {
         try {
-            responseToUserIntent = userIntentionHandler.prepareResponseToUserIntent(userIntention);
-        } catch (IOException e) {
+            execute(response);
+        } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-        var dataForMessage = responseToUserIntent.getFirst();
-        var responseTelegramKeyboardOptions = responseToUserIntent.getSecond();
-        var chatId = update.getMessage().getChatId().toString();
-        sendReplyMessage(chatId, dataForMessage, responseTelegramKeyboardOptions);
     }
 
     private void sendResponse(SendPhoto response) {
@@ -73,31 +69,5 @@ public class TelegramBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-    }
-
-    public synchronized void sendReplyMessage(
-            String chatId, String dataForMessage,
-            ArrayList<String> opinionForKeyboard) {
-        var message = FilmMessageFactory.convertBotResponseToMessage(dataForMessage);
-        setKeyboardForMessage(message, opinionForKeyboard);
-        message.setChatId(chatId);
-        sendResponse(message);
-    }
-
-    public synchronized void setKeyboardForMessage(SendPhoto sendMessage, ArrayList<String> opinionForKeyboard) {
-        var choiceFunctionSelectFilmKeyboardRow = getKeyboardRow(opinionForKeyboard);
-        var keyboardForChoiceFunctionSelectFilm = new ReplyKeyboardMarkup(
-                choiceFunctionSelectFilmKeyboardRow, true, false, true);
-        sendMessage.setReplyMarkup(keyboardForChoiceFunctionSelectFilm);
-    }
-
-    private List<KeyboardRow> getKeyboardRow(ArrayList<String> options) {
-        var choiceFunctionSelectFilmKeyboardRow = new ArrayList<KeyboardRow>();
-        for (String phrase : options) {
-            var keyboardRow = new KeyboardRow();
-            keyboardRow.add(new KeyboardButton(phrase));
-            choiceFunctionSelectFilmKeyboardRow.add(keyboardRow);
-        }
-        return choiceFunctionSelectFilmKeyboardRow;
     }
 }

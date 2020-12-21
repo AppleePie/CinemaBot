@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class jsonFilmParser {
+public class JsonFilmParser {
     public static Map jsonParseToMap(String jsonString){
         var filmData = new HashMap<>();
         var data = new JSONObject(jsonString);

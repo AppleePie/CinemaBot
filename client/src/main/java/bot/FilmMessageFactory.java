@@ -1,14 +1,15 @@
 package bot;
 
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
 
 import java.util.StringJoiner;
 
 public class FilmMessageFactory {
-    public static SendPhoto convertBotResponseToMessage(String response){
-        var filmData = jsonFilmParser.jsonParseToMap(response);
+    public static SendPhoto convertBotResponseToPhotoMessage(String response){
+        var filmData = JsonFilmParser.jsonParseToMap(response);
         var title = filmData.get("title");
 
         var genresData = filmData
@@ -37,6 +38,14 @@ public class FilmMessageFactory {
         message.setPhoto(poster);
         message.setParseMode(ParseMode.HTML);
         message.setCaption(captionToPoster);
+        return message;
+    }
+
+    public static SendMessage convertBotResponseToMessage(String response){
+        var inscription = String.format("<i>%s</i>", response);
+        var message = new SendMessage();
+        message.setParseMode(ParseMode.HTML);
+        message.setText(inscription);
         return message;
     }
 }
