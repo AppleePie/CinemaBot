@@ -51,6 +51,6 @@ public class BotMessageFactory {
                 listMessages.add(messageIncorrectClass.prepareTextMessage());
             }
         }
-        return new Pair<ArrayList<SendPhoto>, ArrayList<SendMessage>>(listPhotoMessages, listMessages);
+        return new Pair<>(listPhotoMessages, listMessages);
     }
 }

@@ -51,20 +51,24 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
         var listPhotoMessages = pairPhotoPostAndMessages.getFirst();
         var listMessages = pairPhotoPostAndMessages.getSecond();
-        listPhotoMessages.forEach(this::sendResponse);
-        listMessages.forEach(this::sendResponse);
+
+        var chatId = update.getMessage().getChatId().toString();
+        listPhotoMessages.forEach(message -> sendResponse(message, chatId));
+        listMessages.forEach(message -> sendResponse(message, chatId));
     }
 
-    private void sendResponse(SendMessage response) {
+    private void sendResponse(SendMessage response, String chatId) {
         try {
+            response.setChatId(chatId);
             execute(response);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
     }
 
-    private void sendResponse(SendPhoto response) {
+    private void sendResponse(SendPhoto response, String chatId) {
         try {
+            response.setChatId(chatId);
             execute(response);
         } catch (TelegramApiException e) {
             e.printStackTrace();
