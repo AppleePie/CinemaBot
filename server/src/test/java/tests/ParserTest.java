@@ -38,11 +38,7 @@ public class ParserTest {
     private static Document incorrectPageDocument;
 
     static {
-        try {
-            classParse = new Parser();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        classParse = new Parser();
     }
 
     @Before
@@ -53,15 +49,15 @@ public class ParserTest {
         var pathToCorrectFile = Paths.get(ParserTest.class.getResource(relativeWayToCorrectFile).toURI());
         var pathToIncorrectFile = Paths.get(ParserTest.class.getResource(relativeWayToIncorrectFile).toURI());
 
-        correctPageDocument = DocumentManager.getDocumentFromPathToFile(pathToCorrectFile);
-        incorrectPageDocument = DocumentManager.getDocumentFromPathToFile(pathToIncorrectFile);
+        correctPageDocument = DocumentManagerLocalCopy.getDocumentFromPathToFile(pathToCorrectFile);
+        incorrectPageDocument = DocumentManagerLocalCopy.getDocumentFromPathToFile(pathToIncorrectFile);
     }
 
     @Test
     public void getLinksToAllMovie_IncorrectSite() throws URISyntaxException, IOException {
         var relativeWayToTopFilmsPageIncorrect = "/website imdb for test/top_films_page_incorrect.html";
         var pathToFile = Paths.get(ParserTest.class.getResource(relativeWayToTopFilmsPageIncorrect).toURI());
-        var document = DocumentManager.getDocumentFromPathToFile(pathToFile);
+        var document = DocumentManagerLocalCopy.getDocumentFromPathToFile(pathToFile);
         var allLinks = classParse.getLinksToAllMovie(document);
         var answer = new ArrayList<String>();
         assertEquals(answer, allLinks);
@@ -71,7 +67,7 @@ public class ParserTest {
     public void getLinksToAllMovie_CorrectSite() throws URISyntaxException, IOException {
         var relativeWayToTopFilmsPageIncorrect = "/website imdb for test/top_films_page_correct.html";
         var pathToFile = Paths.get(ParserTest.class.getResource(relativeWayToTopFilmsPageIncorrect).toURI());
-        var document = DocumentManager.getDocumentFromPathToFile(pathToFile);
+        var document = DocumentManagerLocalCopy.getDocumentFromPathToFile(pathToFile);
         var allLinks = classParse.getLinksToAllMovie(document);
         var answer = new ArrayList<String>();
         answer.add("https://www.imdb.com/correct_url");

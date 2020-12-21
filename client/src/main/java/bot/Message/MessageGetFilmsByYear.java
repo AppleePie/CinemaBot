@@ -44,7 +44,7 @@ public class MessageGetFilmsByYear implements IBotBaseMessage, IBotMoreMessagesR
     }
 
     @Override
-    public ArrayList<SendMessage> prepareTextMessage(String userMessage) throws IOException {
+    public ArrayList<SendMessage> prepareTextMessage(String userMessage) {
         return null;
     }
 }

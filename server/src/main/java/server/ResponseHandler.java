@@ -19,7 +19,7 @@ public class ResponseHandler {
 
     public static String createResponse(String userInput, Option option) {
         return switch(option) {
-            case AllAvailableGenres ->  String.join("&", ImdbInformationManager.getAllAvailableGenresAsStrings());
+            case AllAvailableGenres -> String.join("&", ImdbInformationManager.getAllAvailableGenresAsStrings());
             case AllReleaseYears -> String.join("&", ImdbInformationManager.getAllAvailableReleaseYearsAsStrings());
             case FilmWithGenre -> ImdbInformationManager.findFilmWithGenre(userInput);
             case FilmsInYear -> ImdbInformationManager.findFilmsWithYear(userInput);

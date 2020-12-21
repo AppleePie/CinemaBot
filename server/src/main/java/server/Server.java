@@ -12,8 +12,7 @@ import java.net.URI;
 public class Server {
 
     public Server() throws IOException {
-        ConfigHelper.initValues();
-//        manager.updateDataBase();
+        ImdbInformationManager.updateDataBase();
     }
 
     public void startServer() throws IOException {

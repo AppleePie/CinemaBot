@@ -28,8 +28,12 @@ public class ConfigHelper {
     public static String IMAGE_TAG;
     public static String TAG_THE_ADDRESS_OF_THE_FILE;
 
-    public static void initValues() throws IOException {
-        initServerProperties();
+    static {
+        try {
+            initServerProperties();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         HOST_PORT = config.getProperty("HOST_PORT");
         HOST_NAME = config.getProperty("HOST_NAME");

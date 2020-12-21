@@ -1,15 +1,15 @@
 version: '3.7'
 
 services:
-  database:
+  postgres:
     image: postgres
-    container_name: database
+    container_name: postgres
     restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: example
+      POSTGRES_PASSWORD: postgres
     ports:
-      - 5432:5432
+      - 5432
 
   client:
     build: client
@@ -25,4 +25,4 @@ services:
     restart: always
     container_name: server
     depends_on:
-      - mongo
+      - postgres

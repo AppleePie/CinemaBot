@@ -15,11 +15,6 @@ public class Parser {
     private Element mainInformationFilmPage;
     private Elements subtextElementsFilmPage;
 
-
-    public Parser() throws IOException {
-        ConfigHelper.initValues();
-    }
-
     public List<String> getLinksToAllMovie(Document document){
         var linksToAllMovie = new ArrayList<String>();
         var elementsWithMovieTag = document.select(ConfigHelper.MOVIE_TAG_IN_THE_TOP);

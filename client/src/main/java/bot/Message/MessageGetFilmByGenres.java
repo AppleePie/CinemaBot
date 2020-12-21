@@ -3,7 +3,6 @@ package bot.Message;
 import bot.FilmMessageFactory;
 import bot.RequestHandler;
 import bot.TelegramButtonCreator;
-import bot.UserIntention;
 import org.glassfish.grizzly.utils.Pair;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;

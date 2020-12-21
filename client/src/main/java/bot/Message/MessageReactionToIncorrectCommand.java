@@ -14,8 +14,7 @@ public class MessageReactionToIncorrectCommand implements IBotBaseMessage, IBotM
 
     @Override
     public Pair<String, ArrayList<String>> prepareResponseToMessage() {
-        return new Pair<>("I don't understand this command",
-                phrasesForTelegramKeyboard);
+        return new Pair<>("I don't understand this command", phrasesForTelegramKeyboard);
     }
 
     @Override

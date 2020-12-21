@@ -13,6 +13,7 @@ public class MessageForTelegramCommandHelp implements IBotBaseMessage, IBotMessa
     public MessageForTelegramCommandHelp() {
         fillSuitableUserMessage();
     }
+
     @Override
     public void fillSuitableUserMessage() {
         suitableUserMessage.add("/help");
